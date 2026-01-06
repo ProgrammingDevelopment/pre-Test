@@ -78,10 +78,7 @@ class RSAIntegrityManager {
       const signature = crypto.sign(
         this.algorithm,
         Buffer.from(dataString),
-        {
-          key: privateKey,
-          padding: crypto.constants.RSA_PKCS1_OAEP_PADDING,
-        }
+        privateKey
       );
 
       return signature.toString('base64');
@@ -110,10 +107,7 @@ class RSAIntegrityManager {
       const isValid = crypto.verify(
         this.algorithm,
         Buffer.from(dataString),
-        {
-          key: publicKey,
-          padding: crypto.constants.RSA_PKCS1_OAEP_PADDING,
-        },
+        publicKey,
         Buffer.from(signature, 'base64')
       );
 
