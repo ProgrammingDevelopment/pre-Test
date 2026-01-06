@@ -14,10 +14,13 @@ The backend consists of two main services:
 ### Base Endpoints
 
 #### Health Check
+
 ```
 GET /health
 ```
+
 Response:
+
 ```json
 {
   "status": "healthy",
@@ -34,6 +37,7 @@ Response:
 ### 1. Chat API
 
 #### Send Message
+
 ```
 POST /api/v1/chat
 Content-Type: application/json
@@ -47,6 +51,7 @@ Content-Type: application/json
 ```
 
 Response:
+
 ```json
 {
   "id": "msg_1704520200000",
@@ -65,16 +70,19 @@ Response:
 ### 2. Product Search
 
 #### Search Products
+
 ```
 GET /api/v1/products/search?q=sofa&category=Sofa&max_price=5000000
 ```
 
 Query Parameters:
+
 - `q` (string, optional): Search query
 - `category` (string, optional): Product category
 - `max_price` (integer, optional): Maximum price in IDR
 
 Response:
+
 ```json
 {
   "count": 3,
@@ -96,16 +104,19 @@ Response:
 ### 3. Recommendations
 
 #### Get Product Recommendations
+
 ```
 GET /api/v1/recommendations?budget=5000000&style=modern&room=living_room
 ```
 
 Query Parameters:
+
 - `budget` (integer, optional): Budget in IDR
 - `style` (string, optional): modern, classic, rustic, minimalist
 - `room` (string, optional): Room type
 
 Response:
+
 ```json
 {
   "budget": "5000000",
@@ -127,11 +138,13 @@ Response:
 ### 4. Conversation History
 
 #### Get Conversation
+
 ```
 GET /api/v1/conversations/:id
 ```
 
 Response:
+
 ```json
 {
   "conversation_id": "conv_123",
@@ -152,11 +165,13 @@ Response:
 ### 5. Statistics
 
 #### Get Service Statistics
+
 ```
 GET /api/v1/stats
 ```
 
 Response:
+
 ```json
 {
   "total_chats": 1234,
@@ -173,11 +188,13 @@ Response:
 ### Base Endpoints
 
 #### Health Check
+
 ```
 GET /health
 ```
 
 Response:
+
 ```json
 {
   "status": "healthy",
@@ -194,6 +211,7 @@ Response:
 ### 1. Chat (Streaming)
 
 #### Stream Chat Response
+
 ```
 POST /api/v1/chat
 Content-Type: application/json
@@ -210,6 +228,7 @@ Content-Type: application/json
 ```
 
 Streaming Response (newline-delimited JSON):
+
 ```json
 {"chunk": "Saya merekomendasikan", "token_count": 5, "is_final": false}
 {"chunk": " Sofa Modern", "token_count": 10, "is_final": false}
@@ -221,6 +240,7 @@ Streaming Response (newline-delimited JSON):
 ### 2. Recommendations
 
 #### Get AI Recommendations
+
 ```
 POST /api/v1/recommendations
 Content-Type: application/json
@@ -234,6 +254,7 @@ Content-Type: application/json
 ```
 
 Response:
+
 ```json
 {
   "recommendations": "Berdasarkan preferensi Anda, saya merekomendasikan...",
@@ -247,6 +268,7 @@ Response:
 ### 3. Image Analysis
 
 #### Analyze Furniture Image
+
 ```
 POST /api/v1/image-analysis
 Content-Type: multipart/form-data
@@ -255,6 +277,7 @@ image: <binary image file>
 ```
 
 Response:
+
 ```json
 {
   "analysis": {
@@ -262,18 +285,18 @@ Response:
     "status": "analyzed",
     "style": {
       "modern": 0.85,
-      "minimalist": 0.10,
+      "minimalist": 0.1,
       "classic": 0.05
     },
     "material": {
-      "fabric": 0.90,
+      "fabric": 0.9,
       "wood": 0.08,
       "metal": 0.02
     },
     "colors": {
       "dark": 0.45,
       "light": 0.35,
-      "warm": 0.20
+      "warm": 0.2
     }
   }
 }
@@ -284,11 +307,13 @@ Response:
 ### 4. Product Search
 
 #### Search Products from Catalog
+
 ```
 GET /api/v1/product-search?q=sofa&category=Sofa
 ```
 
 Query Parameters:
+
 - `q`: Search query (optional)
 - `category`: Product category (optional)
 - `max_price`: Maximum price in IDR (optional)
@@ -298,6 +323,7 @@ Query Parameters:
 ### 5. Product Comparison
 
 #### Compare Multiple Products
+
 ```
 POST /api/v1/comparison
 Content-Type: application/json
@@ -310,6 +336,7 @@ Content-Type: application/json
 ```
 
 Response:
+
 ```json
 {
   "comparison": "Perbandingan produk [1,3,5]...",
@@ -322,11 +349,13 @@ Response:
 ### 6. Available Providers
 
 #### List LLM Providers
+
 ```
 GET /api/v1/providers
 ```
 
 Response:
+
 ```json
 {
   "available_providers": ["deepseek", "openai", "gemini"],
@@ -339,6 +368,7 @@ Response:
 ## Error Responses
 
 ### 400 Bad Request
+
 ```json
 {
   "error": "Invalid request format",
@@ -347,6 +377,7 @@ Response:
 ```
 
 ### 404 Not Found
+
 ```json
 {
   "error": "Route not found"
@@ -354,6 +385,7 @@ Response:
 ```
 
 ### 429 Too Many Requests
+
 ```json
 {
   "error": "Rate limit exceeded",
@@ -362,6 +394,7 @@ Response:
 ```
 
 ### 500 Internal Server Error
+
 ```json
 {
   "error": "Internal server error"
@@ -369,6 +402,7 @@ Response:
 ```
 
 ### 503 Service Unavailable
+
 ```json
 {
   "error": "Image detection not enabled"
@@ -399,6 +433,7 @@ Currently, the API is open without authentication. For production:
 ## CORS
 
 **Allowed Origins** (configurable):
+
 - http://localhost:3000
 - http://localhost:3001
 - http://localhost:3000
@@ -418,6 +453,7 @@ Currently, the API is open without authentication. For production:
 ### Complete Chat Workflow
 
 1. User sends message
+
 ```bash
 curl -X POST http://localhost:3001/api/v1/chat \
   -H "Content-Type: application/json" \
@@ -428,12 +464,14 @@ curl -X POST http://localhost:3001/api/v1/chat \
 ```
 
 2. System processes with AI
+
 - Python Flask receives request
 - Loads system prompt with product context
 - Calls DeepSeek/OpenAI/Gemini API
 - Returns formatted response
 
 3. Response with related products
+
 ```json
 {
   "id": "msg_...",
@@ -445,11 +483,13 @@ curl -X POST http://localhost:3001/api/v1/chat \
 ### Search & Recommend Workflow
 
 1. Search products
+
 ```bash
 curl "http://localhost:3001/api/v1/products/search?category=Sofa&max_price=5000000"
 ```
 
 2. Get AI recommendations
+
 ```bash
 curl -X POST http://localhost:5000/api/v1/recommendations \
   -H "Content-Type: application/json" \
@@ -460,6 +500,7 @@ curl -X POST http://localhost:5000/api/v1/recommendations \
 ```
 
 3. Compare products
+
 ```bash
 curl -X POST http://localhost:5000/api/v1/comparison \
   -H "Content-Type: application/json" \
@@ -473,11 +514,13 @@ curl -X POST http://localhost:5000/api/v1/comparison \
 ### Health Checks
 
 Golang API:
+
 ```bash
 curl http://localhost:3001/health
 ```
 
 Flask AI:
+
 ```bash
 curl http://localhost:5000/health
 ```
@@ -492,12 +535,12 @@ curl http://localhost:5000/health
 
 ## Performance Metrics
 
-| Endpoint | Avg Response Time | P99 |
-|----------|-------------------|-----|
-| /api/v1/chat | 2-5s | 10s |
-| /api/v1/products/search | 50ms | 200ms |
-| /api/v1/recommendations | 3-7s | 15s |
-| /api/v1/image-analysis | 1-2s | 5s |
+| Endpoint                | Avg Response Time | P99   |
+| ----------------------- | ----------------- | ----- |
+| /api/v1/chat            | 2-5s              | 10s   |
+| /api/v1/products/search | 50ms              | 200ms |
+| /api/v1/recommendations | 3-7s              | 15s   |
+| /api/v1/image-analysis  | 1-2s              | 5s    |
 
 ---
 

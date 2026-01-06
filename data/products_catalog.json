@@ -1,0 +1,424 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "name": "Sofa Modern Minimalis",
+            "category": "Sofa",
+            "price": 4500000,
+            "currency": "IDR",
+            "description": "Sofa modern dengan desain minimalis dan bahan berkualitas tinggi",
+            "specifications": {
+                "material": "Fabric dengan inner spring",
+                "color": "Abu-abu dan Cokelat",
+                "dimension": "200cm (panjang) x 80cm (lebar) x 85cm (tinggi)",
+                "weight": "150kg",
+                "capacity": "3-4 orang"
+            },
+            "features": [
+                "Desain ergonomis",
+                "Mudah dibersihkan",
+                "Tersedia berbagai warna",
+                "Konstruksi kokoh dan tahan lama"
+            ],
+            "image_url": "/images/sofa-modern.jpg",
+            "keywords": [
+                "sofa",
+                "modern",
+                "minimalis",
+                "ruang tamu"
+            ]
+        },
+        {
+            "id": 2,
+            "name": "Kursi Kerja Executive",
+            "category": "Kursi",
+            "price": 2800000,
+            "currency": "IDR",
+            "description": "Kursi kerja ergonomis dengan sandaran tinggi dan fungsi tilt lock",
+            "specifications": {
+                "material": "Mesh dengan busa memory foam",
+                "color": "Hitam dan Abu-abu",
+                "dimension": "65cm (lebar) x 65cm (kedalaman) x 120cm (tinggi)",
+                "weight": "25kg",
+                "max_load": "150kg"
+            },
+            "features": [
+                "Adjustable height (40-50cm)",
+                "Tilt lock mechanism",
+                "Armrest yang dapat disesuaikan",
+                "Garansi 5 tahun"
+            ],
+            "image_url": "/images/kursi-kerja.jpg",
+            "keywords": [
+                "kursi",
+                "kerja",
+                "office",
+                "ergonomis"
+            ]
+        },
+        {
+            "id": 3,
+            "name": "Meja Makan Kayu Jati",
+            "category": "Meja",
+            "price": 5200000,
+            "currency": "IDR",
+            "description": "Meja makan dari kayu jati pilihan dengan desain klasik modern",
+            "specifications": {
+                "material": "Kayu Jati asli",
+                "finish": "Natural oil finish",
+                "dimension": "150cm (panjang) x 90cm (lebar) x 75cm (tinggi)",
+                "weight": "200kg",
+                "capacity": "6-8 orang"
+            },
+            "features": [
+                "Kayu jati premium",
+                "Design timeless",
+                "Anti rayap treatment",
+                "Custom size available"
+            ],
+            "image_url": "/images/meja-makan.jpg",
+            "keywords": [
+                "meja makan",
+                "kayu jati",
+                "dining",
+                "klasik"
+            ]
+        },
+        {
+            "id": 4,
+            "name": "Lemari Penyimpanan Modular",
+            "category": "Lemari",
+            "price": 3500000,
+            "currency": "IDR",
+            "description": "Sistem penyimpanan modular yang fleksibel dan dapat disesuaikan",
+            "specifications": {
+                "material": "MDF dengan finishing glossy",
+                "color": "Putih, Hitam, Cokelat",
+                "dimension": "120cm (lebar) x 40cm (kedalaman) x 180cm (tinggi)",
+                "weight": "80kg",
+                "shelves": "6 rak dapat disesuaikan"
+            },
+            "features": [
+                "Modular dan dapat disusun ulang",
+                "Pintu soft close",
+                "Kapasitas penyimpanan besar",
+                "Easy assembly"
+            ],
+            "image_url": "/images/lemari-modular.jpg",
+            "keywords": [
+                "lemari",
+                "penyimpanan",
+                "storage",
+                "modular"
+            ]
+        },
+        {
+            "id": 5,
+            "name": "Tempat Tidur Platform Minimalis",
+            "category": "Tempat Tidur",
+            "price": 6800000,
+            "currency": "IDR",
+            "description": "Tempat tidur platform dengan desain rendah dan storage bawah",
+            "specifications": {
+                "material": "Kayu solid dan MDF",
+                "color": "Natural dan Hitam",
+                "dimension": "160cm x 200cm (Queen) - atau custom",
+                "weight": "180kg",
+                "storage": "Under-bed drawers"
+            },
+            "features": [
+                "Design minimalis modern",
+                "Storage laci di bawah",
+                "Headboard besar",
+                "Dapat dikustomisasi ukuran"
+            ],
+            "image_url": "/images/tempat-tidur.jpg",
+            "keywords": [
+                "tempat tidur",
+                "bed",
+                "platform",
+                "penyimpanan"
+            ]
+        },
+        {
+            "id": 6,
+            "name": "Rak Dinding Floating",
+            "category": "Rak",
+            "price": 800000,
+            "currency": "IDR",
+            "description": "Rak dinding floating dengan desain minimalis dan daya tahan tinggi",
+            "specifications": {
+                "material": "Kayu atau logam",
+                "color": "Hitam, Putih, Natural",
+                "dimension": "60cm x 20cm x 10cm (standar)",
+                "weight": "5kg",
+                "max_load": "25kg per rak"
+            },
+            "features": [
+                "Instalasi mudah",
+                "Berbagai pilihan ukuran",
+                "Support bracket tersembunyi",
+                "Modern minimalis"
+            ],
+            "image_url": "/images/rak-floating.jpg",
+            "keywords": [
+                "rak",
+                "floating",
+                "dinding",
+                "storage"
+            ]
+        },
+        {
+            "id": 7,
+            "name": "Lampu Pendant Modern",
+            "category": "Lighting",
+            "price": 1200000,
+            "currency": "IDR",
+            "description": "Lampu pendant dengan desain kontemporer dan efisiensi energi LED",
+            "specifications": {
+                "material": "Logam dan kaca",
+                "color": "Hitam, Emas, Chrome",
+                "dimension": "D 25cm x T 30cm",
+                "bulb": "E27 LED (15W)",
+                "light_temp": "Warm White 3000K"
+            },
+            "features": [
+                "LED energy efficient",
+                "Dimmable options",
+                "Modern design",
+                "Easy to install"
+            ],
+            "image_url": "/images/lampu-pendant.jpg",
+            "keywords": [
+                "lampu",
+                "pendant",
+                "lighting",
+                "modern"
+            ]
+        },
+        {
+            "id": 8,
+            "name": "Karpet Area Wool Premium",
+            "category": "Accessories",
+            "price": 2200000,
+            "currency": "IDR",
+            "description": "Karpet wool premium dengan pola tradisional dan modern",
+            "specifications": {
+                "material": "100% Wool dengan backing kuat",
+                "pile_height": "15mm",
+                "dimension": "200cm x 300cm (standar)",
+                "weight": "12kg",
+                "origin": "Turkey / India"
+            },
+            "features": [
+                "Premium wool quality",
+                "Stain resistant treatment",
+                "Berbagai pilihan pola",
+                "Mudah dibersihkan"
+            ],
+            "image_url": "/images/karpet-wool.jpg",
+            "keywords": [
+                "karpet",
+                "wool",
+                "area rug",
+                "premium"
+            ]
+        },
+        {
+            "id": 9,
+            "name": "Meja Konsol Marmer",
+            "category": "Meja",
+            "price": 3800000,
+            "currency": "IDR",
+            "description": "Meja konsol dengan permukaan marmer dan kaki logam elegan",
+            "specifications": {
+                "material": "Marmer asli dengan kaki logam",
+                "top_stone": "Nero Marquina / White Carrara",
+                "dimension": "120cm (panjang) x 40cm (lebar) x 85cm (tinggi)",
+                "weight": "150kg",
+                "finish": "Polished marmer"
+            },
+            "features": [
+                "Marmer asli premium",
+                "Desain elegan kontemporer",
+                "Tahan lama dan mudah perawatan",
+                "Cocok untuk entryway"
+            ],
+            "image_url": "/images/meja-konsol-marmer.jpg",
+            "keywords": [
+                "meja konsol",
+                "marmer",
+                "luxury",
+                "entryway"
+            ]
+        },
+        {
+            "id": 10,
+            "name": "Kursi Lounge Kulit Asli",
+            "category": "Kursi",
+            "price": 4200000,
+            "currency": "IDR",
+            "description": "Kursi lounge dengan kulit asli dan desain vintage modern",
+            "specifications": {
+                "material": "Genuine leather dengan inner frame kayu",
+                "color": "Cokelat, Hitam, Cream",
+                "dimension": "85cm (lebar) x 90cm (kedalaman) x 80cm (tinggi)",
+                "weight": "45kg",
+                "seat_height": "40cm"
+            },
+            "features": [
+                "Genuine leather premium",
+                "Vintage modern design",
+                "Comfortable seating",
+                "Dapat dikustomisasi"
+            ],
+            "image_url": "/images/kursi-lounge.jpg",
+            "keywords": [
+                "kursi lounge",
+                "leather",
+                "vintage",
+                "comfortable"
+            ]
+        },
+        {
+            "id": 11,
+            "name": "Partisi Ruangan Berkaca",
+            "category": "Accessories",
+            "price": 1800000,
+            "currency": "IDR",
+            "description": "Partisi ruangan dengan frame aluminum dan kaca tempered",
+            "specifications": {
+                "material": "Aluminum frame dengan kaca tempered 8mm",
+                "finish": "Chrome atau matte black",
+                "dimension": "150cm (lebar) x 200cm (tinggi)",
+                "weight": "40kg",
+                "glass_type": "Clear atau frosted"
+            },
+            "features": [
+                "Modern glass partition",
+                "Sound insulation moderate",
+                "Easy to move",
+                "Berbagai pilihan tinggi"
+            ],
+            "image_url": "/images/partisi-berkaca.jpg",
+            "keywords": [
+                "partisi",
+                "kaca",
+                "room divider",
+                "modern"
+            ]
+        },
+        {
+            "id": 12,
+            "name": "Meja Kerja Minimalis Putih",
+            "category": "Meja",
+            "price": 1500000,
+            "currency": "IDR",
+            "description": "Meja kerja minimalis dengan desain clean dan storage terintegrasi",
+            "specifications": {
+                "material": "MDF dengan finishing cat lacquer",
+                "color": "Putih, Natural, Abu-abu",
+                "dimension": "120cm x 60cm x 75cm",
+                "weight": "35kg",
+                "storage": "2 laci, 1 kompartmen terbuka"
+            },
+            "features": [
+                "Design minimalis clean",
+                "Storage terintegrasi",
+                "Stabil dan kokoh",
+                "Easy to assemble"
+            ],
+            "image_url": "/images/meja-kerja.jpg",
+            "keywords": [
+                "meja kerja",
+                "desk",
+                "minimalis",
+                "home office"
+            ]
+        },
+        {
+            "id": 13,
+            "name": "Kursi Bar Kulit Sintetis",
+            "category": "Kursi",
+            "price": 950000,
+            "currency": "IDR",
+            "description": "Kursi bar dengan ketinggian dapat disesuaikan dan padding empuk",
+            "specifications": {
+                "material": "Synthetic leather dengan foam padding",
+                "color": "Hitam, Cokelat, Merah",
+                "dimension": "W 40cm x D 40cm x H 65-85cm (adjustable)",
+                "weight": "12kg",
+                "max_load": "120kg"
+            },
+            "features": [
+                "Height adjustable",
+                "360 degrees swivel",
+                "Cushioned seat",
+                "Stylish design"
+            ],
+            "image_url": "/images/kursi-bar.jpg",
+            "keywords": [
+                "kursi bar",
+                "bar stool",
+                "counter",
+                "adjustable"
+            ]
+        },
+        {
+            "id": 14,
+            "name": "Mirror Dekoratif Bulat",
+            "category": "Accessories",
+            "price": 1100000,
+            "currency": "IDR",
+            "description": "Cermin dekoratif bulat dengan frame gold dan desain modern",
+            "specifications": {
+                "material": "Cermin reflektif dengan frame logam",
+                "frame_color": "Gold, Chrome, Copper",
+                "diameter": "60cm - 100cm (pilihan)",
+                "weight": "8kg (60cm)",
+                "mirror_type": "HD reflective glass"
+            },
+            "features": [
+                "Modern round design",
+                "Berbagai pilihan ukuran",
+                "High quality mirror",
+                "Easy wall mounting"
+            ],
+            "image_url": "/images/mirror-bulat.jpg",
+            "keywords": [
+                "cermin",
+                "mirror",
+                "dekoratif",
+                "round"
+            ]
+        },
+        {
+            "id": 15,
+            "name": "Ottoman Kubus Linen",
+            "category": "Furniture",
+            "price": 1600000,
+            "currency": "IDR",
+            "description": "Ottoman kubus dengan bahan linen berkualitas dan penyimpanan dalam",
+            "specifications": {
+                "material": "Linen fabric dengan wooden frame",
+                "color": "Krem, Abu-abu, Navy Blue",
+                "dimension": "50cm x 50cm x 45cm",
+                "weight": "18kg",
+                "storage": "Hollow interior dengan lid"
+            },
+            "features": [
+                "Storage ottoman",
+                "Versatile seating",
+                "Premium linen fabric",
+                "Minimalist design"
+            ],
+            "image_url": "/images/ottoman-kubus.jpg",
+            "keywords": [
+                "ottoman",
+                "footstool",
+                "storage",
+                "linen"
+            ]
+        }
+    ]
+}

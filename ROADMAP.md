@@ -9,6 +9,7 @@
 ## 📋 Executive Summary
 
 This is a comprehensive 10-phase migration from a basic Node.js e-commerce admin system to an **enterprise-grade AI-powered furniture marketplace** with:
+
 - Multi-LLM AI chatbot (Gemini, DeepSeek, OpenAI)
 - CNN-based image recognition (ResNet-50)
 - Golang backend with Fiber framework
@@ -23,18 +24,18 @@ This is a comprehensive 10-phase migration from a basic Node.js e-commerce admin
 
 ## 📊 Project Phases Tracker
 
-| # | Fase | Tugas | Teknologi | Status | ETA | Owner |
-|---|------|-------|-----------|--------|-----|-------|
-| 1 | **Data** | Kumpulkan 15 produk & spek | JSON/Excel | ✅ Complete | - | AI Team |
-| 2 | **Data** | Generate 50+ Q&A pairs (SFT) | Python Script | ✅ Complete | - | AI Team |
-| 3 | **AI (CNN)** | Setup ResNet image detection | PyTorch | 🔄 In Progress | Week 1 | ML Engineer |
-| 4 | **AI (LLM)** | Setup multi-LLM API clients | Python SDK | 🔄 In Progress | Week 2 | AI Engineer |
-| 5 | **AI (Logic)** | Create system prompts | Python | ✅ Complete | - | AI Engineer |
-| 6 | **Backend** | Setup Golang Fiber + limiter | Golang | ⏳ Pending | Week 2 | Backend |
-| 7 | **Backend** | Connect Golang ↔ Python | gRPC/REST | ⏳ Pending | Week 3 | Backend |
-| 8 | **Frontend** | Chat UI integration | React/JS | ⏳ Pending | Week 3 | Frontend |
-| 9 | **Security** | Prompt injection testing | Manual | ⏳ Pending | Week 4 | QA/Security |
-| 10 | **Deploy** | Docker & deployment | Docker | ⏳ Pending | Week 4 | DevOps |
+| #   | Fase           | Tugas                        | Teknologi     | Status         | ETA    | Owner       |
+| --- | -------------- | ---------------------------- | ------------- | -------------- | ------ | ----------- |
+| 1   | **Data**       | Kumpulkan 15 produk & spek   | JSON/Excel    | ✅ Complete    | -      | AI Team     |
+| 2   | **Data**       | Generate 50+ Q&A pairs (SFT) | Python Script | ✅ Complete    | -      | AI Team     |
+| 3   | **AI (CNN)**   | Setup ResNet image detection | PyTorch       | 🔄 In Progress | Week 1 | ML Engineer |
+| 4   | **AI (LLM)**   | Setup multi-LLM API clients  | Python SDK    | 🔄 In Progress | Week 2 | AI Engineer |
+| 5   | **AI (Logic)** | Create system prompts        | Python        | ✅ Complete    | -      | AI Engineer |
+| 6   | **Backend**    | Setup Golang Fiber + limiter | Golang        | ⏳ Pending     | Week 2 | Backend     |
+| 7   | **Backend**    | Connect Golang ↔ Python      | gRPC/REST     | ⏳ Pending     | Week 3 | Backend     |
+| 8   | **Frontend**   | Chat UI integration          | React/JS      | ⏳ Pending     | Week 3 | Frontend    |
+| 9   | **Security**   | Prompt injection testing     | Manual        | ⏳ Pending     | Week 4 | QA/Security |
+| 10  | **Deploy**     | Docker & deployment          | Docker        | ⏳ Pending     | Week 4 | DevOps      |
 
 ---
 
@@ -45,6 +46,7 @@ This is a comprehensive 10-phase migration from a basic Node.js e-commerce admin
 ### Deliverables:
 
 #### 1. **products_catalog.json** (15 Products)
+
 - **Sofa Modern Minimalis** - Rp 4.5M (ergonomic, 3-4 seater)
 - **Kursi Kerja Executive** - Rp 2.8M (adjustable, memory foam)
 - **Meja Makan Kayu Jati** - Rp 5.2M (premium wood, 6-8 seater)
@@ -65,20 +67,20 @@ This is a comprehensive 10-phase migration from a basic Node.js e-commerce admin
 
 #### 2. **qa_sft_dataset.json** (35+ Q&A Pairs)
 
-| Category | Count | Examples |
-|----------|-------|----------|
-| Recommendations | 8 | "Sofa apa yang cocok untuk..." |
-| Pricing | 4 | "Berapa harga..." |
-| Specifications | 6 | "Spesifikasi lengkap..." |
-| Maintenance | 2 | "Bagaimana cara merawat..." |
-| Customization | 2 | "Bisa dikustomisasi?" |
-| Installation | 2 | "Berapa lama instalasi..." |
-| Versatility | 2 | "Cocok di ruangan apa..." |
-| Comparisons | 1 | "Perbedaan..." |
-| Material | 2 | "Material apa yang digunakan..." |
-| Budget | 2 | "Ada furniture untuk budget..." |
-| Bundles | 1 | "Furniture set untuk..." |
-| Other | 4 | Various |
+| Category        | Count | Examples                         |
+| --------------- | ----- | -------------------------------- |
+| Recommendations | 8     | "Sofa apa yang cocok untuk..."   |
+| Pricing         | 4     | "Berapa harga..."                |
+| Specifications  | 6     | "Spesifikasi lengkap..."         |
+| Maintenance     | 2     | "Bagaimana cara merawat..."      |
+| Customization   | 2     | "Bisa dikustomisasi?"            |
+| Installation    | 2     | "Berapa lama instalasi..."       |
+| Versatility     | 2     | "Cocok di ruangan apa..."        |
+| Comparisons     | 1     | "Perbedaan..."                   |
+| Material        | 2     | "Material apa yang digunakan..." |
+| Budget          | 2     | "Ada furniture untuk budget..."  |
+| Bundles         | 1     | "Furniture set untuk..."         |
+| Other           | 4     | Various                          |
 
 **Format**: id, question (Indonesian), answer, product_ids, category, tags
 
@@ -107,18 +109,21 @@ class FurnitureImageDetector:
 ```
 
 ### Installation:
+
 ```bash
 pip install torch torchvision pillow
 python ai/image_detector.py  # Batch analyze all products
 ```
 
 ### Output: `image_analysis_results.json`
+
 - Per-product feature vectors
 - Style probabilities
 - Material predictions
 - Color analysis
 
 ### Next Steps:
+
 - [ ] Generate product image placeholders or use real images
 - [ ] Run batch analysis to create feature database
 - [ ] Train secondary classifier for furniture category recognition
@@ -134,11 +139,11 @@ python ai/image_detector.py  # Batch analyze all products
 
 ### Supported LLMs:
 
-| Provider | Model | API | Status |
-|----------|-------|-----|--------|
-| Google Gemini | gemini-pro | REST | ✅ Implemented |
-| DeepSeek | deepseek-chat | OpenAI-compatible | ✅ Implemented |
-| OpenAI | gpt-3.5-turbo / gpt-4 | REST | ✅ Implemented |
+| Provider      | Model                 | API               | Status         |
+| ------------- | --------------------- | ----------------- | -------------- |
+| Google Gemini | gemini-pro            | REST              | ✅ Implemented |
+| DeepSeek      | deepseek-chat         | OpenAI-compatible | ✅ Implemented |
+| OpenAI        | gpt-3.5-turbo / gpt-4 | REST              | ✅ Implemented |
 
 ### Architecture:
 
@@ -150,6 +155,7 @@ LLMManager
 ```
 
 ### Features:
+
 - Async/await support for non-blocking calls
 - Streaming responses for real-time chat UI
 - Conversation history management
@@ -179,6 +185,7 @@ response = await manager.chat(
 ```
 
 ### Next Steps:
+
 - [ ] Set up API keys for all providers
 - [ ] Test multi-provider failover logic
 - [ ] Implement response caching (Redis)
@@ -196,26 +203,32 @@ response = await manager.chat(
 ### Prompt Types:
 
 #### 1. **Base System Prompt**
+
 - Personality: Xionco Furniture Sales Expert
 - Language: Bahasa Indonesia
 - Tone: Professional, helpful, enthusiastic
 - Max response length: 150 words
 
 #### 2. **Product Context**
+
 Automatically includes:
+
 - All 15 products with specs
 - Pricing information
 - Features and benefits
 - Keywords for product matching
 
 #### 3. **Safety Guardrails**
+
 Defends against:
+
 - Prompt injection attacks
 - Role override attempts
 - Confidential data access
 - Code execution requests
 
 #### 4. **Conversation Rules**
+
 - Product recommendations
 - Specification accuracy
 - Price/budget assistance
@@ -223,6 +236,7 @@ Defends against:
 - Style coordination
 
 #### 5. **Template Library**
+
 - Recommendation scenarios
 - Product comparisons
 - Room styling guides
@@ -231,6 +245,7 @@ Defends against:
 ### Outputs:
 
 Generated to `data/system_prompts.json`:
+
 ```json
 {
   "timestamp": "2026-01-06T10:00:00",
@@ -247,7 +262,7 @@ Generated to `data/system_prompts.json`:
 ✅ Dynamic context injection based on customer profile  
 ✅ Automatic product knowledge integration  
 ✅ Safety guidelines to prevent jailbreaks  
-✅ Conversation templates for common scenarios  
+✅ Conversation templates for common scenarios
 
 ---
 
@@ -258,6 +273,7 @@ Generated to `data/system_prompts.json`:
 Before proceeding with Golang backend and React integration, please clarify:
 
 #### 1. **Architecture Decision**
+
 - **Option A**: Golang Fiber as main API → Python as microservice
 - **Option B**: Keep Node.js as main API → Python as sidecar
 - **Option C**: Full microservices (Node.js + Golang + Python)
@@ -265,6 +281,7 @@ Before proceeding with Golang backend and React integration, please clarify:
 **Recommendation**: Option A (cleanest separation, best performance)
 
 #### 2. **Communication Protocol**
+
 - **HTTP REST** (simpler, JSON-based)
 - **gRPC** (faster, binary protocol)
 - **Message Queue** (async, scalable)
@@ -272,6 +289,7 @@ Before proceeding with Golang backend and React integration, please clarify:
 **Recommendation**: REST for initial phase + gRPC for optimized phase
 
 #### 3. **Database**
+
 - Current: SQLite (for products)
 - Needed: PostgreSQL (for chat history, user profiles)
 - Cache: Redis (for sessions, response caching)
@@ -279,6 +297,7 @@ Before proceeding with Golang backend and React integration, please clarify:
 **Recommendation**: PostgreSQL + Redis in Docker
 
 #### 4. **React Chat Component**
+
 - Streaming UI (real-time token display)
 - Message history persistence
 - Image upload for furniture matching
@@ -289,6 +308,7 @@ Before proceeding with Golang backend and React integration, please clarify:
 ## 📦 Environment Setup
 
 ### Current Stack:
+
 ```
 pre-test/
 ├── app.js (Node.js Express server)
@@ -352,6 +372,7 @@ python system_prompt.py
 ## 🔐 Security Considerations
 
 ### Already Implemented ✅
+
 - HTTPS + TLS 1.3
 - RSA-4096 API signing
 - Content Security Policy (CSP)
@@ -359,6 +380,7 @@ python system_prompt.py
 - HSTS headers
 
 ### To Add 🚨
+
 - [ ] Rate limiting (express-rate-limit)
 - [ ] Input validation & sanitization
 - [ ] Prompt injection detection
@@ -370,31 +392,34 @@ python system_prompt.py
 
 ## 📈 Performance Targets
 
-| Component | Target | Current |
-|-----------|--------|---------|
-| API Response Time | <200ms | - |
-| Image Processing | <2s per image | - |
-| LLM Response Time | <5s (streaming) | - |
-| Database Query | <100ms | - |
-| Frontend Load | <1s | - |
+| Component         | Target          | Current |
+| ----------------- | --------------- | ------- |
+| API Response Time | <200ms          | -       |
+| Image Processing  | <2s per image   | -       |
+| LLM Response Time | <5s (streaming) | -       |
+| Database Query    | <100ms          | -       |
+| Frontend Load     | <1s             | -       |
 
 ---
 
 ## 🧪 Testing Strategy
 
 ### Unit Tests (Phase 9)
+
 - [ ] Image detector accuracy
 - [ ] LLM prompt injection defense
 - [ ] API response signing/verification
 - [ ] Database CRUD operations
 
 ### Integration Tests
+
 - [ ] Golang ↔ Python communication
 - [ ] Node.js ↔ Golang API calls
 - [ ] React UI ↔ API integration
 - [ ] Security header validation
 
 ### Security Tests
+
 - [ ] Prompt injection attempts (SQL, Code, Role override)
 - [ ] XSS prevention (CSP)
 - [ ] CSRF protection
@@ -405,6 +430,7 @@ python system_prompt.py
 ## 📚 Documentation
 
 ### Generated Files:
+
 - ✅ `products_catalog.json` - Product database
 - ✅ `qa_sft_dataset.json` - Training data for SFT
 - ✅ `image_analysis_results.json` - CNN feature vectors
@@ -417,21 +443,22 @@ python system_prompt.py
 
 ## 🚀 Estimated Timeline
 
-| Phase | Task | Duration | Start |
-|-------|------|----------|-------|
-| 1 | Data collection | ✅ 1 day | Week 1 |
-| 2-4 | AI modules | ✅ 2 days | Week 1 |
-| 5-7 | Backend (Golang) | 5 days | Week 2 |
-| 8 | Frontend (React) | 4 days | Week 3 |
-| 9 | Security testing | 3 days | Week 4 |
-| 10 | Docker & Deploy | 3 days | Week 4 |
-| **Total** | | **~18-21 days** | **4-5 weeks** |
+| Phase     | Task             | Duration        | Start         |
+| --------- | ---------------- | --------------- | ------------- |
+| 1         | Data collection  | ✅ 1 day        | Week 1        |
+| 2-4       | AI modules       | ✅ 2 days       | Week 1        |
+| 5-7       | Backend (Golang) | 5 days          | Week 2        |
+| 8         | Frontend (React) | 4 days          | Week 3        |
+| 9         | Security testing | 3 days          | Week 4        |
+| 10        | Docker & Deploy  | 3 days          | Week 4        |
+| **Total** |                  | **~18-21 days** | **4-5 weeks** |
 
 ---
 
 ## 📞 Support & Questions
 
 For clarifications on:
+
 - Architecture choices
 - Technology decisions
 - Budget constraints

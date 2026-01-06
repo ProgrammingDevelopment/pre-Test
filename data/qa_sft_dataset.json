@@ -1,0 +1,524 @@
+{
+    "qa_pairs": [
+        {
+            "id": 1,
+            "question": "Saya mencari sofa yang nyaman untuk ruang tamu modern. Apa rekomendasi Anda?",
+            "answer": "Saya sangat merekomendasikan Sofa Modern Minimalis kami. Dirancang dengan desain ergonomis, material berkualitas tinggi (fabric dengan inner spring), dan tersedia dalam berbagai warna seperti abu-abu dan cokelat. Sofa ini cocok untuk 3-4 orang dan mudah dibersihkan. Dimensinya 200cm x 80cm x 85cm, perfect untuk ruang tamu modern.",
+            "product_ids": [
+                1
+            ],
+            "category": "recommendation",
+            "tags": [
+                "sofa",
+                "modern",
+                "ruang tamu"
+            ]
+        },
+        {
+            "id": 2,
+            "question": "Berapa harga Sofa Modern Minimalis?",
+            "answer": "Sofa Modern Minimalis kami dipasok dengan harga Rp 4.500.000. Harga ini mencakup furniture berkualitas tinggi dengan desain minimalis yang timeless dan konstruksi kokoh yang tahan lama.",
+            "product_ids": [
+                1
+            ],
+            "category": "pricing",
+            "tags": [
+                "harga",
+                "sofa",
+                "price"
+            ]
+        },
+        {
+            "id": 3,
+            "question": "Apakah ada kursi kerja yang ergonomis dengan harga terjangkau?",
+            "answer": "Ya, kami memiliki Kursi Kerja Executive dengan harga Rp 2.800.000. Kursi ini dilengkapi dengan mesh dan busa memory foam untuk kenyamanan maksimal. Fitur-fiturnya meliputi adjustable height (40-50cm), tilt lock mechanism, dan armrest yang dapat disesuaikan. Garansi 5 tahun juga disediakan untuk kepuasan Anda.",
+            "product_ids": [
+                2
+            ],
+            "category": "recommendation",
+            "tags": [
+                "kursi kerja",
+                "ergonomis",
+                "office"
+            ]
+        },
+        {
+            "id": 4,
+            "question": "Kursi kerja dapat menahan beban maksimal berapa?",
+            "answer": "Kursi Kerja Executive kami dapat menahan beban maksimal hingga 150kg. Konstruksi yang kuat didukung oleh material berkualitas tinggi dan desain ergonomis yang telah teruji.",
+            "product_ids": [
+                2
+            ],
+            "category": "specification",
+            "tags": [
+                "kursi",
+                "kapasitas",
+                "specifications"
+            ]
+        },
+        {
+            "id": 5,
+            "question": "Apa material meja makan yang Anda sarankan untuk ketahanan jangka panjang?",
+            "answer": "Kami merekomendasikan Meja Makan Kayu Jati kami yang terbuat dari kayu jati asli pilihan. Material ini dikenal sangat tahan lama dan memiliki anti rayap treatment. Dimensinya 150cm x 90cm x 75cm, cocok untuk 6-8 orang. Harganya Rp 5.200.000 dengan finishing natural oil yang mempertahankan keindahan kayu alami.",
+            "product_ids": [
+                3
+            ],
+            "category": "recommendation",
+            "tags": [
+                "meja makan",
+                "kayu jati",
+                "ketahanan"
+            ]
+        },
+        {
+            "id": 6,
+            "question": "Apakah ada sistem penyimpanan yang dapat disesuaikan?",
+            "answer": "Ya, kami memiliki Lemari Penyimpanan Modular yang sangat fleksibel. Sistem ini dapat disusun ulang sesuai kebutuhan Anda dengan 6 rak yang dapat disesuaikan. Dilengkapi dengan pintu soft close dan kapasitas penyimpanan yang besar. Tersedia dalam berbagai warna (putih, hitam, cokelat) dengan harga Rp 3.500.000.",
+            "product_ids": [
+                4
+            ],
+            "category": "recommendation",
+            "tags": [
+                "penyimpanan",
+                "modular",
+                "storage"
+            ]
+        },
+        {
+            "id": 7,
+            "question": "Apakah tempat tidur memiliki tempat penyimpanan?",
+            "answer": "Tempat Tidur Platform Minimalis kami dilengkapi dengan under-bed drawers untuk penyimpanan. Dirancang dengan desain rendah yang minimalis dan modern. Tersedia ukuran Queen (160cm x 200cm) atau dapat dikustomisasi. Harga Rp 6.800.000 dengan material kayu solid dan MDF berkualitas.",
+            "product_ids": [
+                5
+            ],
+            "category": "specification",
+            "tags": [
+                "tempat tidur",
+                "storage",
+                "penyimpanan"
+            ]
+        },
+        {
+            "id": 8,
+            "question": "Berapa daya tahan beban Rak Dinding Floating per rak?",
+            "answer": "Setiap Rak Dinding Floating kami dapat menahan beban maksimal 25kg. Raknya dirancang dengan support bracket tersembunyi untuk tampilan yang rapi dan minimalis. Tersedia berbagai pilihan ukuran, warna (hitam, putih, natural), dan harga terjangkau mulai dari Rp 800.000.",
+            "product_ids": [
+                6
+            ],
+            "category": "specification",
+            "tags": [
+                "rak",
+                "floating",
+                "kapasitas"
+            ]
+        },
+        {
+            "id": 9,
+            "question": "Saya mencari lampu yang hemat energi untuk rumah modern. Apa pilihan terbaik?",
+            "answer": "Lampu Pendant Modern kami adalah pilihan ideal dengan teknologi LED yang hemat energi. Menggunakan bulb E27 LED 15W dengan cahaya warm white 3000K, menciptakan suasana nyaman. Tersedia dalam warna hitam, emas, atau chrome dengan harga Rp 1.200.000. Lampunya dapat di-dim dan mudah dipasang.",
+            "product_ids": [
+                7
+            ],
+            "category": "recommendation",
+            "tags": [
+                "lampu",
+                "LED",
+                "hemat energi"
+            ]
+        },
+        {
+            "id": 10,
+            "question": "Apakah karpet wool mudah dibersihkan?",
+            "answer": "Ya, Karpet Area Wool Premium kami sangat mudah dibersihkan. Material wool 100% dilengkapi dengan stain resistant treatment yang melindungi dari noda. Tersedia berbagai pilihan pola tradisional dan modern dengan dimensi 200cm x 300cm. Harga Rp 2.200.000 dengan kualitas premium dari Turkey atau India.",
+            "product_ids": [
+                8
+            ],
+            "category": "specification",
+            "tags": [
+                "karpet",
+                "wool",
+                "perawatan"
+            ]
+        },
+        {
+            "id": 11,
+            "question": "Saya ingin meja konsol untuk entryway yang elegan. Apa rekomendasi Anda?",
+            "answer": "Meja Konsol Marmer kami adalah pilihan sempurna untuk entryway yang elegan. Menggunakan marmer asli pilihan seperti Nero Marquina atau White Carrara dengan kaki logam yang sophisticated. Dimensinya 120cm x 40cm x 85cm, finishing polished marmer yang tahan lama. Harga Rp 3.800.000 untuk tampilan luxury yang kontemporer.",
+            "product_ids": [
+                9
+            ],
+            "category": "recommendation",
+            "tags": [
+                "meja konsol",
+                "marmer",
+                "luxury"
+            ]
+        },
+        {
+            "id": 12,
+            "question": "Apakah ada kursi lounge dengan material asli?",
+            "answer": "Ya, Kursi Lounge Kulit Asli kami menggunakan genuine leather premium dengan inner frame kayu berkualitas. Desain vintage modern yang nyaman dengan seat height 40cm. Tersedia dalam warna cokelat, hitam, atau cream. Dimensinya 85cm x 90cm x 80cm dengan harga Rp 4.200.000. Dapat dikustomisasi sesuai kebutuhan Anda.",
+            "product_ids": [
+                10
+            ],
+            "category": "recommendation",
+            "tags": [
+                "kursi lounge",
+                "leather",
+                "kulit asli"
+            ]
+        },
+        {
+            "id": 13,
+            "question": "Bagaimana cara membagi ruangan tanpa renovasi besar?",
+            "answer": "Partisi Ruangan Berkaca kami adalah solusi sempurna untuk membagi ruang tanpa renovasi. Menggunakan frame aluminum dengan kaca tempered 8mm, tersedia dalam warna chrome atau matte black. Dimensinya 150cm x 200cm dengan berbagai pilihan tinggi. Harga Rp 1.800.000 dengan insulation suara yang moderate dan mudah dipindahkan.",
+            "product_ids": [
+                11
+            ],
+            "category": "recommendation",
+            "tags": [
+                "partisi",
+                "kaca",
+                "room divider"
+            ]
+        },
+        {
+            "id": 14,
+            "question": "Saya membutuhkan meja kerja untuk home office yang minimalis. Apa rekomendasi Anda?",
+            "answer": "Meja Kerja Minimalis Putih kami sempurna untuk home office dengan desain clean dan rapi. Material MDF dengan finishing cat lacquer tersedia dalam warna putih, natural, atau abu-abu. Dimensinya 120cm x 60cm x 75cm dengan storage terintegrasi (2 laci dan 1 kompartmen terbuka). Harga Rp 1.500.000 dengan assembly yang mudah.",
+            "product_ids": [
+                12
+            ],
+            "category": "recommendation",
+            "tags": [
+                "meja kerja",
+                "home office",
+                "minimalis"
+            ]
+        },
+        {
+            "id": 15,
+            "question": "Kursi bar dengan harga berapa yang dapat menyangga beban 120kg?",
+            "answer": "Kursi Bar Kulit Sintetis kami dapat menahan beban hingga 120kg dengan harga terjangkau Rp 950.000. Fiturnya meliputi height adjustable (65-85cm), 360 degrees swivel, dan cushioned seat yang nyaman. Tersedia dalam warna hitam, cokelat, atau merah dengan design yang stylish.",
+            "product_ids": [
+                13
+            ],
+            "category": "recommendation",
+            "tags": [
+                "kursi bar",
+                "bar stool",
+                "harga"
+            ]
+        },
+        {
+            "id": 16,
+            "question": "Apakah ada cermin dekoratif yang dapat memperluas kesan ruangan?",
+            "answer": "Ya, Mirror Dekoratif Bulat kami sempurna untuk memperluas kesan ruangan dengan refleksi cahaya. Tersedia dalam berbagai ukuran (60cm - 100cm) dan warna frame (gold, chrome, copper). Material HD reflective glass dengan harga mulai dari Rp 1.100.000. Mudah dipasang dan menciptakan kesan modern di dinding rumah Anda.",
+            "product_ids": [
+                14
+            ],
+            "category": "recommendation",
+            "tags": [
+                "cermin",
+                "mirror",
+                "dekoratif"
+            ]
+        },
+        {
+            "id": 17,
+            "question": "Saya mencari ottoman yang multifungsi. Apakah ada dengan storage?",
+            "answer": "Ottoman Kubus Linen kami adalah solusi multifungsi dengan storage internal. Material premium linen berkualitas dengan wooden frame yang kokoh. Dimensinya 50cm x 50cm x 45cm, dapat digunakan sebagai footstool atau extra seating. Tersedia dalam warna krem, abu-abu, atau navy blue dengan harga Rp 1.600.000.",
+            "product_ids": [
+                15
+            ],
+            "category": "recommendation",
+            "tags": [
+                "ottoman",
+                "storage",
+                "multifungsi"
+            ]
+        },
+        {
+            "id": 18,
+            "question": "Apa spesifikasi lengkap Sofa Modern Minimalis?",
+            "answer": "Sofa Modern Minimalis memiliki spesifikasi: Material fabric dengan inner spring, warna abu-abu dan cokelat, dimensi 200cm (panjang) x 80cm (lebar) x 85cm (tinggi), berat 150kg, kapasitas 3-4 orang. Fiturnya meliputi desain ergonomis, mudah dibersihkan, tersedia berbagai warna, dan konstruksi kokoh tahan lama.",
+            "product_ids": [
+                1
+            ],
+            "category": "specification",
+            "tags": [
+                "sofa",
+                "spesifikasi",
+                "details"
+            ]
+        },
+        {
+            "id": 19,
+            "question": "Material apa yang digunakan pada Kursi Kerja Executive?",
+            "answer": "Kursi Kerja Executive menggunakan material mesh dengan busa memory foam untuk kenyamanan maksimal. Tersedia dalam warna hitam dan abu-abu. Dilengkapi dengan mekanisme tilt lock dan armrest yang dapat disesuaikan, serta garansi 5 tahun.",
+            "product_ids": [
+                2
+            ],
+            "category": "specification",
+            "tags": [
+                "kursi",
+                "material",
+                "mesh"
+            ]
+        },
+        {
+            "id": 20,
+            "question": "Apakah kayu jati pada meja makan tahan terhadap rayap?",
+            "answer": "Ya, Meja Makan Kayu Jati kami dilengkapi dengan anti rayap treatment, menjadikannya tahan lama dan awet. Material kayu jati asli pilihan dengan finishing natural oil mempertahankan keindahan alami kayu. Investasi furniture ini akan bertahan untuk generasi mendatang dengan perawatan yang tepat.",
+            "product_ids": [
+                3
+            ],
+            "category": "specification",
+            "tags": [
+                "kayu jati",
+                "anti rayap",
+                "durability"
+            ]
+        },
+        {
+            "id": 21,
+            "question": "Bagaimana cara merawat Lemari Penyimpanan Modular?",
+            "answer": "Lemari Penyimpanan Modular dengan finishing glossy MDF mudah dirawat. Cukup lap dengan kain lembut dan pembersih furniture ringan. Hindari air berlebihan langsung pada permukaan. Pintu soft close membantu mencegah kerusakan, dan sistem modularnya dapat dibongkar-pasang untuk pembersihan mendalam.",
+            "product_ids": [
+                4
+            ],
+            "category": "maintenance",
+            "tags": [
+                "perawatan",
+                "cleaning",
+                "maintenance"
+            ]
+        },
+        {
+            "id": 22,
+            "question": "Apakah Tempat Tidur Platform dapat dikustomisasi ukurannya?",
+            "answer": "Ya, Tempat Tidur Platform Minimalis dapat dikustomisasi sesuai kebutuhan Anda. Tersedia standar Queen (160cm x 200cm) atau dapat disesuaikan dengan ukuran yang Anda inginkan. Material kayu solid dan MDF berkualitas, dengan desain minimalis modern yang timeless.",
+            "product_ids": [
+                5
+            ],
+            "category": "customization",
+            "tags": [
+                "custom",
+                "ukuran",
+                "personalisasi"
+            ]
+        },
+        {
+            "id": 23,
+            "question": "Berapa lama proses instalasi Rak Dinding Floating?",
+            "answer": "Instalasi Rak Dinding Floating sangat mudah dan cepat, biasanya hanya membutuhkan 30-60 menit per rak. Support bracket tersembunyi memastikan tampilan rapi, dan semua hardware sudah disediakan. Cocok untuk DIY atau dengan bantuan profesional.",
+            "product_ids": [
+                6
+            ],
+            "category": "installation",
+            "tags": [
+                "instalasi",
+                "setup",
+                "mounting"
+            ]
+        },
+        {
+            "id": 24,
+            "question": "Apakah Lampu Pendant Modern dapat dipasang di berbagai ruangan?",
+            "answer": "Ya, Lampu Pendant Modern dapat dipasang di berbagai ruangan seperti dining room, bedroom, atau living room. Desain kontemporer dengan berbagai pilihan warna (hitam, emas, chrome) membuat fleksibel untuk berbagai gaya interior. Kompatibel dengan E27 socket standar.",
+            "product_ids": [
+                7
+            ],
+            "category": "versatility",
+            "tags": [
+                "lampu",
+                "ruangan",
+                "versatile"
+            ]
+        },
+        {
+            "id": 25,
+            "question": "Karpet wool asli atau sintetis? Apa perbedaannya?",
+            "answer": "Karpet Area Wool Premium kami adalah 100% wool asli, bukan sintetis. Wool asli lebih tahan lama, lebih nyaman, lebih regulasi suhu, dan lebih breathable dibanding sintetis. Meskipun lebih premium dengan harga Rp 2.200.000, investasi ini akan memberikan nilai yang lebih baik untuk jangka panjang.",
+            "product_ids": [
+                8
+            ],
+            "category": "comparison",
+            "tags": [
+                "wool",
+                "asli",
+                "vs sintetis"
+            ]
+        },
+        {
+            "id": 26,
+            "question": "Meja Konsol Marmer cocok di ruangan apa saja?",
+            "answer": "Meja Konsol Marmer sangat cocok untuk entryway, living room, atau dining area. Desain elegan kontemporer dengan bahan marmer premium menciptakan kesan luxury dan sophisticated. Mudah dirawat dengan lap basah dan pembersih marmer ringan.",
+            "product_ids": [
+                9
+            ],
+            "category": "usage",
+            "tags": [
+                "marmer",
+                "placement",
+                "ruangan"
+            ]
+        },
+        {
+            "id": 27,
+            "question": "Apakah kulit pada Kursi Lounge adalah genuine leather atau synthetic?",
+            "answer": "Kursi Lounge menggunakan genuine leather asli yang berkualitas premium. Genuine leather memberikan kenyamanan lebih, breathability lebih baik, dan akan semakin indah dengan penuaan. Inner frame menggunakan kayu berkualitas untuk stabilitas maksimal.",
+            "product_ids": [
+                10
+            ],
+            "category": "material",
+            "tags": [
+                "kulit asli",
+                "genuine leather",
+                "quality"
+            ]
+        },
+        {
+            "id": 28,
+            "question": "Apakah Partisi Berkaca transparan atau frosted?",
+            "answer": "Partisi Ruangan Berkaca tersedia dalam dua pilihan: kaca clear (transparan) atau frosted (buram). Kaca clear memberikan pencahayaan maksimal, sedangkan frosted memberikan privacy lebih. Pilih sesuai kebutuhan dan preferensi desain interior Anda.",
+            "product_ids": [
+                11
+            ],
+            "category": "specification",
+            "tags": [
+                "partisi",
+                "kaca",
+                "clear vs frosted"
+            ]
+        },
+        {
+            "id": 29,
+            "question": "Apakah Meja Kerja Minimalis mudah dipindahkan?",
+            "answer": "Meja Kerja Minimalis Putih memiliki berat 35kg dengan design yang compact, sehingga cukup mudah dipindahkan dengan bantuan dua orang. Konstruksi kokoh tetapi tidak terlalu berat. Mudah di-assemble jika perlu dipisah-pisahkan untuk dipindahkan.",
+            "product_ids": [
+                12
+            ],
+            "category": "practicality",
+            "tags": [
+                "meja kerja",
+                "mobilitas",
+                "berat"
+            ]
+        },
+        {
+            "id": 30,
+            "question": "Berapa tinggi minimum dan maksimum Kursi Bar Kulit Sintetis?",
+            "answer": "Kursi Bar Kulit Sintetis memiliki height adjustable dari 65cm hingga 85cm, memberikan fleksibilitas tinggi untuk berbagai ketinggian counter atau bar. Dilengkapi dengan 360 degrees swivel dan cushioned seat yang nyaman untuk penggunaan jangka lama.",
+            "product_ids": [
+                13
+            ],
+            "category": "specification",
+            "tags": [
+                "kursi bar",
+                "height adjustable",
+                "tinggi"
+            ]
+        },
+        {
+            "id": 31,
+            "question": "Mirror Dekoratif Bulat apakah tahan lama untuk penggunaan jangka panjang?",
+            "answer": "Ya, Mirror Dekoratif Bulat dengan HD reflective glass dan frame logam berkualitas dirancang untuk tahan lama. Material berkualitas tinggi menjamin refleksi jernih bertahun-tahun. Perawatan sederhana dengan lap basah dan pembersih kaca ringan.",
+            "product_ids": [
+                14
+            ],
+            "category": "durability",
+            "tags": [
+                "cermin",
+                "tahan lama",
+                "longevity"
+            ]
+        },
+        {
+            "id": 32,
+            "question": "Apakah Ottoman Kubus Linen dapat menahan beban berapa kg?",
+            "answer": "Ottoman Kubus Linen dapat menahan beban normal untuk seating dan footstool penggunaan. Dengan wooden frame yang kokoh dan berat produk 18kg sendiri, ottoman ini cukup stabil untuk penggunaan umum. Cocok untuk 1 orang duduk atau sebagai footrest.",
+            "product_ids": [
+                15
+            ],
+            "category": "specification",
+            "tags": [
+                "ottoman",
+                "kapasitas",
+                "beban"
+            ]
+        },
+        {
+            "id": 33,
+            "question": "Saya ingin sofa dengan desain modern namun terjangkau. Apa pilihan terbaik?",
+            "answer": "Sofa Modern Minimalis kami adalah pilihan terbaik untuk budget-conscious shoppers yang menginginkan desain modern berkualitas. Dengan harga Rp 4.500.000 dan fitur premium seperti inner spring, design ergonomis, dan mudah dibersihkan, ini merupakan value for money yang excellent.",
+            "product_ids": [
+                1
+            ],
+            "category": "budget_recommendation",
+            "tags": [
+                "budget",
+                "value",
+                "terjangkau"
+            ]
+        },
+        {
+            "id": 34,
+            "question": "Apakah ada furniture multifungsi untuk apartemen kecil?",
+            "answer": "Ya, kami memiliki beberapa pilihan multifungsi ideal untuk apartemen kecil: Lemari Penyimpanan Modular (storage maksimal), Tempat Tidur Platform (dengan under-bed storage), Ottoman Kubus Linen (seating dan storage), dan Rak Dinding Floating (maksimalkan vertikal space). Pilih kombinasi sesuai kebutuhan ruangan Anda.",
+            "product_ids": [
+                4,
+                5,
+                15,
+                6
+            ],
+            "category": "space_saving",
+            "tags": [
+                "apartemen kecil",
+                "multifungsi",
+                "space saving"
+            ]
+        },
+        {
+            "id": 35,
+            "question": "Saya butuh furniture dining set lengkap. Apa rekomendasi kombinasi?",
+            "answer": "Untuk dining set lengkap, kami merekomendasikan kombinasi: Meja Makan Kayu Jati (center piece berkualitas), Kursi Bar untuk casual seating (Rp 950.000 per unit), dan Mirror Dekoratif Bulat untuk accent wall. Atau alternatif dengan Meja Konsol Marmer untuk elegance maksimal.",
+            "product_ids": [
+                3,
+                13,
+                14
+            ],
+            "category": "bundle",
+            "tags": [
+                "dining",
+                "set",
+                "kombinasi"
+            ]
+        }
+    ],
+    "metadata": {
+        "total_qa_pairs": 35,
+        "categories": [
+            "recommendation",
+            "pricing",
+            "specification",
+            "maintenance",
+            "customization",
+            "installation",
+            "versatility",
+            "comparison",
+            "usage",
+            "material",
+            "practicality",
+            "durability",
+            "budget_recommendation",
+            "space_saving",
+            "bundle"
+        ],
+        "language": "Indonesian",
+        "version": "1.0",
+        "sft_ready": true,
+        "min_questions_per_product": 2,
+        "avg_answer_length_tokens": 45
+    }
+}

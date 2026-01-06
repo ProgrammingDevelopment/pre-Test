@@ -25,7 +25,7 @@ rsaManager.generateKeys(); // Generate keys on first run
 
 // 3. Apply obfuscation middleware (for production)
 if (process.env.NODE_ENV === 'production') {
-  app.use(ObfuscationManager.minificationMiddleware());
+    app.use(ObfuscationManager.minificationMiddleware());
 }
 
 // ============================================

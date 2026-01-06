@@ -119,33 +119,33 @@ docker-compose down
 
 ### Golang Fiber (Port 3001)
 
-| Endpoint | Method | Purpose |
-|----------|--------|---------|
-| `/health` | GET | Health check |
-| `/api/v1/chat` | POST | Send chat message |
-| `/api/v1/products/search` | GET | Search products |
-| `/api/v1/recommendations` | GET | Get recommendations |
-| `/api/v1/conversations/:id` | GET | Get conversation history |
-| `/api/v1/stats` | GET | Service statistics |
+| Endpoint                    | Method | Purpose                  |
+| --------------------------- | ------ | ------------------------ |
+| `/health`                   | GET    | Health check             |
+| `/api/v1/chat`              | POST   | Send chat message        |
+| `/api/v1/products/search`   | GET    | Search products          |
+| `/api/v1/recommendations`   | GET    | Get recommendations      |
+| `/api/v1/conversations/:id` | GET    | Get conversation history |
+| `/api/v1/stats`             | GET    | Service statistics       |
 
 ### Python Flask (Port 5000)
 
-| Endpoint | Method | Purpose |
-|----------|--------|---------|
-| `/health` | GET | Health check |
-| `/api/v1/chat` | POST | Chat with streaming |
-| `/api/v1/recommendations` | POST | AI recommendations |
-| `/api/v1/image-analysis` | POST | Analyze furniture images |
-| `/api/v1/product-search` | GET | Search product catalog |
-| `/api/v1/comparison` | POST | Compare products |
-| `/api/v1/providers` | GET | List available LLMs |
+| Endpoint                  | Method | Purpose                  |
+| ------------------------- | ------ | ------------------------ |
+| `/health`                 | GET    | Health check             |
+| `/api/v1/chat`            | POST   | Chat with streaming      |
+| `/api/v1/recommendations` | POST   | AI recommendations       |
+| `/api/v1/image-analysis`  | POST   | Analyze furniture images |
+| `/api/v1/product-search`  | GET    | Search product catalog   |
+| `/api/v1/comparison`      | POST   | Compare products         |
+| `/api/v1/providers`       | GET    | List available LLMs      |
 
 ### Node.js Admin (Port 3000)
 
-| Path | Purpose |
-|------|---------|
-| `/` | Dashboard |
-| `/admin` | Admin panel |
+| Path              | Purpose            |
+| ----------------- | ------------------ |
+| `/`               | Dashboard          |
+| `/admin`          | Admin panel        |
 | `/admin/products` | Product management |
 
 ---
@@ -229,16 +229,19 @@ curl -X POST http://localhost:5000/api/v1/recommendations \
 ## 📊 Data Overview
 
 ### Product Catalog (15 Items)
+
 - **Price Range**: Rp 800K - Rp 6.8M
 - **Categories**: Sofa, Kursi, Meja, Lemari, Tempat Tidur, Rak, Lighting, Accessories
 - **Features**: Material specs, dimensions, capacity, keywords
 
 ### Q&A Training Dataset (35+ Pairs)
+
 - **Categories**: Recommendations, Pricing, Specs, Maintenance, Installation
 - **Language**: Bahasa Indonesia
 - **SFT Ready**: Yes (for fine-tuning small models)
 
 ### System Prompts (3 Types)
+
 1. **Base**: Standard furniture sales assistant
 2. **QA Training**: Instruction-following format
 3. **Safety**: Prompt injection defense
@@ -248,6 +251,7 @@ curl -X POST http://localhost:5000/api/v1/recommendations \
 ## 🔒 Security Features
 
 ✅ **Already Implemented**:
+
 - HTTPS + TLS 1.3
 - RSA-4096 API signing
 - Content Security Policy (CSP)
@@ -256,6 +260,7 @@ curl -X POST http://localhost:5000/api/v1/recommendations \
 - HTTP→HTTPS redirect
 
 🚨 **To Implement**:
+
 - Rate limiting (express-rate-limit)
 - Input validation
 - Prompt injection detection
@@ -268,12 +273,12 @@ See `SECURITY_IMPLEMENTATION.md` for details.
 
 ## 📈 Performance Targets
 
-| Component | Target | Status |
-|-----------|--------|--------|
-| API Response | <200ms | 🔄 Testing |
-| LLM Response | <5s | 🔄 Testing |
-| Image Processing | <2s | 🔄 Testing |
-| DB Query | <100ms | ⏳ After Phase 7 |
+| Component        | Target | Status           |
+| ---------------- | ------ | ---------------- |
+| API Response     | <200ms | 🔄 Testing       |
+| LLM Response     | <5s    | 🔄 Testing       |
+| Image Processing | <2s    | 🔄 Testing       |
+| DB Query         | <100ms | ⏳ After Phase 7 |
 
 ---
 
@@ -300,12 +305,14 @@ Phase 10: Docker Deploy ⏳
 ## 🐛 Troubleshooting
 
 ### Python Modules Not Found
+
 ```bash
 cd ai/
 pip install -r requirements.txt --upgrade
 ```
 
 ### Golang Build Error
+
 ```bash
 go clean -cache
 go mod tidy
@@ -313,19 +320,24 @@ go build
 ```
 
 ### CORS Issues
+
 Update `ALLOWED_ORIGINS` in `.env`:
+
 ```
 ALLOWED_ORIGINS=http://localhost:3000,http://localhost:3001
 ```
 
 ### LLM API Errors
+
 Check:
+
 1. API keys in `.env` are valid
 2. Internet connection available
 3. API quota not exceeded
 4. Correct provider selected
 
 ### Rate Limit Hit
+
 - Default: 100 requests / 15 minutes per IP
 - Response includes `retry_after` header
 
@@ -365,6 +377,7 @@ Check:
 ## 📞 Support
 
 **Key Files for Reference**:
+
 - `ROADMAP.md` - Full 10-phase plan
 - `backend/API_DOCUMENTATION.md` - API reference
 - `backend/Makefile` - Development commands

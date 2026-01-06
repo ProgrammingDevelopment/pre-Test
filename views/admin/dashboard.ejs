@@ -50,7 +50,7 @@
                 <select id="productSelect" required>
                   <option value="">-- Pilih Furnitur --</option>
                   <% products.forEach(function(product) { %>
-                    <option value="<%= product.id %>"><%= product.name %> (Rp<%= product.price.toLocaleString('id-ID') %>)</option>
+                  <option value="<%= product.id %>"><%= product.name %> (Rp<%= product.price.toLocaleString('id-ID') %>)</option>
                   <% }); %>
                 </select>
               </div>
@@ -157,12 +157,12 @@
       // Theme Toggle
       const themeToggle = document.getElementById('themeToggle');
       const htmlElement = document.documentElement;
-      
+
       // Check for saved theme preference or default to light
       const currentTheme = localStorage.getItem('theme') || 'light';
       htmlElement.setAttribute('data-theme', currentTheme);
       themeToggle.textContent = currentTheme === 'dark' ? '☀️' : '🌙';
-      
+
       // Toggle theme
       themeToggle.addEventListener('click', () => {
         const theme = htmlElement.getAttribute('data-theme');

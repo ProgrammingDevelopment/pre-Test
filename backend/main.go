@@ -1,8 +1,12 @@
 package main
 
 import (
+	"bytes"
+	"encoding/json"
 	"fmt"
+	"io"
 	"log"
+	"net/http"
 	"os"
 	"time"
 
@@ -129,7 +133,7 @@ func HealthCheck(c *fiber.Ctx) error {
 	})
 }
 
-// Chat endpoint - communicates with Python LLM service
+// Chat endpoint - communicates with Python LLM service (Phase 7 HTTP Bridge)
 func ChatHandler(c *fiber.Ctx) error {
 	var req ChatRequest
 
@@ -146,17 +150,93 @@ func ChatHandler(c *fiber.Ctx) error {
 		})
 	}
 
-	// Generate response (would call Python service in production)
-	response := ChatResponse{
-		ID:        fmt.Sprintf("msg_%d", time.Now().UnixNano()),
-		Message:   fmt.Sprintf("Chat received: %s (processing via AI service)", req.Message),
-		Provider:  "deepseek", // Default provider
-		Timestamp: time.Now(),
-		Confidence: 0.95,
-		RelatedProducts: []int{1, 3, 5}, // Example related products
+	// Call Flask AI bridge (Phase 7: HTTP Bridge)
+	flaskResponse, err := callFlaskChatService(req)
+	if err != nil {
+		log.Printf("❌ Flask service error: %v", err)
+		return c.Status(fiber.StatusServiceUnavailable).JSON(fiber.Map{
+			"error": "AI service temporarily unavailable",
+			"message": err.Error(),
+		})
 	}
 
-	return c.Status(fiber.StatusOK).JSON(response)
+	return c.Status(fiber.StatusOK).JSON(flaskResponse)
+}
+
+// callFlaskChatService forwards request to Flask AI bridge (Phase 7)
+func callFlaskChatService(req ChatRequest) (ChatResponse, error) {
+	flaskURL := os.Getenv("PYTHON_SERVICE_URL")
+	if flaskURL == "" {
+		flaskURL = "http://localhost:5000"
+	}
+
+	// Prepare request payload for Flask
+	payload := map[string]interface{}{
+		"message":       req.Message,
+		"product_id":    req.ProductID,
+		"user_id":       req.UserID,
+		"conversation_id": req.ConversationID,
+	}
+
+	jsonPayload, err := json.Marshal(payload)
+	if err != nil {
+		return ChatResponse{}, fmt.Errorf("JSON encoding error: %v", err)
+	}
+
+	// Create HTTP request with timeout (60 seconds for LLM calls)
+	httpReq, err := http.NewRequest("POST", flaskURL+"/api/v1/chat", bytes.NewBuffer(jsonPayload))
+	if err != nil {
+		return ChatResponse{}, fmt.Errorf("HTTP request creation error: %v", err)
+	}
+
+	httpReq.Header.Set("Content-Type", "application/json")
+
+	// Execute request with timeout
+	client := &http.Client{
+		Timeout: 60 * time.Second,
+	}
+
+	httpResp, err := client.Do(httpReq)
+	if err != nil {
+		return ChatResponse{}, fmt.Errorf("Flask service unreachable (%s): %v", flaskURL, err)
+	}
+	defer httpResp.Body.Close()
+
+	// Read response body
+	respBody, err := io.ReadAll(httpResp.Body)
+	if err != nil {
+		return ChatResponse{}, fmt.Errorf("response read error: %v", err)
+	}
+
+	// Handle non-200 status codes
+	if httpResp.StatusCode != http.StatusOK {
+		return ChatResponse{}, fmt.Errorf("Flask service error (status %d): %s", httpResp.StatusCode, string(respBody))
+	}
+
+	// Parse Flask response
+	var flaskResp struct {
+		Message string      `json:"message"`
+		Provider string     `json:"provider"`
+		Confidence float64  `json:"confidence"`
+		RelatedProducts []int `json:"related_products"`
+	}
+
+	if err := json.Unmarshal(respBody, &flaskResp); err != nil {
+		return ChatResponse{}, fmt.Errorf("response parsing error: %v", err)
+	}
+
+	// Return structured response
+	response := ChatResponse{
+		ID:        fmt.Sprintf("msg_%d", time.Now().UnixNano()),
+		Message:   flaskResp.Message,
+		Provider:  flaskResp.Provider,
+		Timestamp: time.Now(),
+		Confidence: flaskResp.Confidence,
+		RelatedProducts: flaskResp.RelatedProducts,
+	}
+
+	log.Printf("✅ Chat processed via %s (confidence: %.2f)", flaskResp.Provider, flaskResp.Confidence)
+	return response, nil
 }
 
 // Product search endpoint

@@ -4,22 +4,24 @@
 
 Implementasi komprehensif 5 lapisan keamanan untuk Xionco Furniture sesuai standar industri:
 
-| Layer | Teknologi | Status | Priority |
-|-------|-----------|--------|----------|
-| **Network (L2)** | Cloudflare WAF + Origin Lockdown | Wajib | Deployment |
-| **Protocol** | HTTPS + TLS 1.3 + HSTS | ✅ Implemented | Standard |
-| **Integrity** | RSA-4096 Signing pada API Header | ✅ Implemented | Wajib |
-| **Logic (L3)** | JavaScript Minification + Anti-Debug | ✅ Implemented | Standar |
-| **Obfuscation** | Code Obfuscation | ✅ Implemented | Standar |
+| Layer            | Teknologi                            | Status         | Priority   |
+| ---------------- | ------------------------------------ | -------------- | ---------- |
+| **Network (L2)** | Cloudflare WAF + Origin Lockdown     | Wajib          | Deployment |
+| **Protocol**     | HTTPS + TLS 1.3 + HSTS               | ✅ Implemented | Standard   |
+| **Integrity**    | RSA-4096 Signing pada API Header     | ✅ Implemented | Wajib      |
+| **Logic (L3)**   | JavaScript Minification + Anti-Debug | ✅ Implemented | Standar    |
+| **Obfuscation**  | Code Obfuscation                     | ✅ Implemented | Standar    |
 
 ---
 
 ## 🔐 Security Layers Implemented
 
 ### 1. Protocol Security (HTTPS + TLS 1.3 + HSTS)
+
 **File**: `config/security.js`
 
 #### Features:
+
 - ✅ HTTPS enforcement (HTTP to HTTPS redirect)
 - ✅ TLS 1.3 minimum version
 - ✅ HSTS headers (1 year max-age, preload enabled)
@@ -27,15 +29,17 @@ Implementasi komprehensif 5 lapisan keamanan untuk Xionco Furniture sesuai stand
 - ✅ X-Frame-Options, X-XSS-Protection, etc.
 
 #### Implementation:
+
 ```javascript
 // In app.js
 const SecurityManager = require('./config/security');
-SecurityManager.enableHSTS(app);        // HSTS headers
-SecurityManager.enforceHTTPS(app);      // HTTP → HTTPS
-SecurityManager.enableCSP(app);         // CSP policy
+SecurityManager.enableHSTS(app); // HSTS headers
+SecurityManager.enforceHTTPS(app); // HTTP → HTTPS
+SecurityManager.enableCSP(app); // CSP policy
 ```
 
 #### Headers Applied:
+
 ```
 Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
 X-Content-Type-Options: nosniff
@@ -49,18 +53,22 @@ Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'..
 ---
 
 ### 2. Integrity Security (RSA-4096 Signing)
+
 **File**: `config/rsa-integrity.js`
 
 #### Purpose:
+
 Memastikan authenticity dan integrity dari semua API responses dengan RSA-4096 digital signature.
 
 #### How It Works:
+
 1. Generate RSA-4096 key pair (public + private key)
 2. Server signs setiap API response dengan private key
 3. Client dapat verify signature dengan public key
 4. Mencegah man-in-the-middle attacks
 
 #### Key Features:
+
 - ✅ RSA-4096 key generation (4096-bit encryption)
 - ✅ SHA-256 hashing untuk signing
 - ✅ Base64-encoded signatures dalam response headers
@@ -68,17 +76,19 @@ Memastikan authenticity dan integrity dari semua API responses dengan RSA-4096 d
 - ✅ Automatic key generation pada startup
 
 #### Implementation:
+
 ```javascript
 // RSA Manager initialization
 const { getRSAManager } = require('./config/rsa-integrity');
 const rsaManager = getRSAManager();
-rsaManager.generateKeys();  // Generates keys once
+rsaManager.generateKeys(); // Generates keys once
 
 // Apply to responses
 app.use(rsaManager.signResponseMiddleware());
 ```
 
 #### API Response Format:
+
 ```json
 {
   "data": {
@@ -92,6 +102,7 @@ app.use(rsaManager.signResponseMiddleware());
 ```
 
 #### Response Headers:
+
 ```
 X-Signature: [base64-encoded-rsa-signature]
 X-Signature-Algorithm: RSA-4096
@@ -99,6 +110,7 @@ X-Signature-Hash: SHA256
 ```
 
 #### Retrieve Public Key:
+
 ```bash
 curl http://localhost:3000/api/security/public-key
 ```
@@ -106,9 +118,11 @@ curl http://localhost:3000/api/security/public-key
 ---
 
 ### 3. Logic Security (JavaScript Minification + Anti-Debug)
+
 **File**: `config/obfuscation.js`
 
 #### Features:
+
 - ✅ JavaScript minification (remove comments, whitespace)
 - ✅ Variable name obfuscation
 - ✅ Anti-debug detection
@@ -116,6 +130,7 @@ curl http://localhost:3000/api/security/public-key
 - ✅ Console protection
 
 #### Minification Process:
+
 ```javascript
 // Original
 function loadProductStock(productId) {
@@ -128,12 +143,14 @@ function a(b){const c=await fetch('/admin/products');}
 ```
 
 #### Anti-Debug Features:
+
 - Detects browser DevTools opening
 - Pauses execution when debugger detected
 - Prevents console access in certain modes
 - Implements periodic checks
 
 #### Implementation:
+
 ```javascript
 // Automatic in production
 if (process.env.NODE_ENV === 'production') {
@@ -144,11 +161,13 @@ if (process.env.NODE_ENV === 'production') {
 ---
 
 ### 4. Network Security (Cloudflare WAF)
+
 **Status**: Configuration Template Provided
 
 #### Cloudflare WAF Rules to Implement:
 
 **A. Origin Lockdown**
+
 ```
 Rule 1: Block direct IP access
   Condition: (cf.hostname eq "YOUR_IP") AND NOT (cf.hostname eq "yourdomain.com")
@@ -160,18 +179,21 @@ Rule 2: Enforce Cloudflare only
 ```
 
 **B. DDoS Protection**
+
 ```
 Sensitivity Level: High
 Action: Challenge
 ```
 
 **C. Bot Management**
+
 ```
 Verified Bots: Allow
 API Bots: Challenge
 ```
 
 **D. Rate Limiting**
+
 ```
 Rule: Limit per IP
   URI: /api/*
@@ -180,6 +202,7 @@ Rule: Limit per IP
 ```
 
 #### Setup Instructions:
+
 1. Go to `cloudflare.com` → Sign up free account
 2. Add domain to Cloudflare
 3. Update DNS to Cloudflare nameservers
@@ -192,6 +215,7 @@ Rule: Limit per IP
 ## 🔑 Key Management
 
 ### RSA Keys Location:
+
 ```
 /certs/
   ├── rsa-public.pem    (Public key - can be distributed)
@@ -201,6 +225,7 @@ Rule: Limit per IP
 ```
 
 ### Key Generation (Automatic):
+
 ```javascript
 // Runs automatically on first startup
 const rsaManager = getRSAManager();
@@ -213,6 +238,7 @@ rsaManager.generateKeys();
 ```
 
 ### For Production:
+
 1. Generate keys in secure environment
 2. Store private key with maximum permissions
 3. Distribute public key to authorized clients
@@ -231,11 +257,13 @@ certs/*.key
 ## 🛡️ Security Endpoints
 
 ### 1. Get Public Key
+
 ```bash
 GET /api/security/public-key
 ```
 
 **Response**:
+
 ```
 -----BEGIN PUBLIC KEY-----
 MIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEA...
@@ -243,11 +271,13 @@ MIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEA...
 ```
 
 ### 2. Security Status
+
 ```bash
 GET /api/security/headers
 ```
 
 **Response**:
+
 ```json
 {
   "protocol": "HTTPS + TLS 1.3",
@@ -293,7 +323,11 @@ async function verifyResponse(response) {
   const isValid = await crypto.subtle.verify(
     'RSASSA-PKCS1-v1_5',
     publicKey,
-    new Uint8Array(atob(signature).split('').map(c => c.charCodeAt(0))),
+    new Uint8Array(
+      atob(signature)
+        .split('')
+        .map((c) => c.charCodeAt(0))
+    ),
     new TextEncoder().encode(dataString)
   );
 
@@ -315,29 +349,34 @@ const verifiedData = await verifyResponse(response);
 ## 🧪 Testing Security
 
 ### 1. Test HTTPS Redirect
+
 ```bash
 curl -v http://localhost:3000/admin 2>&1 | grep -i location
 # Should redirect to https
 ```
 
 ### 2. Test TLS Version
+
 ```bash
 openssl s_client -connect localhost:443 -tls1_3
 # Should show: Protocol  : TLSv1.3
 ```
 
 ### 3. Test HSTS Header
+
 ```bash
 curl -i https://localhost:3000/ | grep Strict-Transport-Security
 # Should show: Strict-Transport-Security: max-age=31536000
 ```
 
 ### 4. Test CSP Header
+
 ```bash
 curl -i https://localhost:3000/ | grep Content-Security-Policy
 ```
 
 ### 5. Test API Signature
+
 ```bash
 curl -s https://localhost:3000/api/admin/products | jq '.'
 # Check for X-Signature header in response
@@ -348,6 +387,7 @@ curl -s https://localhost:3000/api/admin/products | jq '.'
 ## 📊 Security Checklist
 
 ### Pre-Deployment ✅
+
 - [x] HTTPS enabled with valid certificate
 - [x] TLS 1.3 configured
 - [x] HSTS headers active
@@ -364,6 +404,7 @@ curl -s https://localhost:3000/api/admin/products | jq '.'
 - [ ] CORS policy defined
 
 ### Post-Deployment ✅
+
 - [ ] Security headers verified
 - [ ] HTTPS certificate renewed
 - [ ] Logs monitored for attacks
@@ -376,17 +417,17 @@ curl -s https://localhost:3000/api/admin/products | jq '.'
 
 ## 🚨 Threat Models Mitigated
 
-| Threat | Layer | Mitigation |
-|--------|-------|-----------|
-| MITM (Man-in-the-Middle) | Protocol | HTTPS + TLS 1.3 + HSTS |
-| Data Tampering | Integrity | RSA-4096 Signing |
-| Session Hijacking | Protocol | HSTS + Secure Cookies |
-| Code Injection | Logic | CSP + Input Validation |
-| DDoS Attacks | Network | Cloudflare WAF + Rate Limiting |
-| Reverse Engineering | Logic | JavaScript Obfuscation |
-| Debugging/Analysis | Logic | Anti-Debug Detection |
-| Clickjacking | Protocol | X-Frame-Options: DENY |
-| XSS Attacks | Protocol | CSP + X-XSS-Protection |
+| Threat                   | Layer     | Mitigation                     |
+| ------------------------ | --------- | ------------------------------ |
+| MITM (Man-in-the-Middle) | Protocol  | HTTPS + TLS 1.3 + HSTS         |
+| Data Tampering           | Integrity | RSA-4096 Signing               |
+| Session Hijacking        | Protocol  | HSTS + Secure Cookies          |
+| Code Injection           | Logic     | CSP + Input Validation         |
+| DDoS Attacks             | Network   | Cloudflare WAF + Rate Limiting |
+| Reverse Engineering      | Logic     | JavaScript Obfuscation         |
+| Debugging/Analysis       | Logic     | Anti-Debug Detection           |
+| Clickjacking             | Protocol  | X-Frame-Options: DENY          |
+| XSS Attacks              | Protocol  | CSP + X-XSS-Protection         |
 
 ---
 
@@ -411,4 +452,3 @@ Xionco Furniture now implements enterprise-grade security across all layers:
 5. **Access Control** → API key signing + Rate limiting
 
 **Status**: ✅ **PRODUCTION READY** (pending Cloudflare setup)
-

@@ -16,6 +16,7 @@ The Xionco Furniture Admin Panel now includes a complete dark/light theme system
 - **Default**: Light theme on first visit
 
 #### How It Works:
+
 ```javascript
 // Theme toggling
 const newTheme = theme === 'dark' ? 'light' : 'dark';
@@ -26,6 +27,7 @@ localStorage.setItem('theme', newTheme);
 ### 2. **International Standard Typography**
 
 #### Font Size Scale (px)
+
 ```
 --fs-xs:   12px  (Extra small - captions)
 --fs-sm:   14px  (Small - labels, badges)
@@ -38,6 +40,7 @@ localStorage.setItem('theme', newTheme);
 ```
 
 #### Font Weights (W3C Standard)
+
 ```
 --fw-normal:    400  (Regular text)
 --fw-medium:    500  (Slightly emphasis)
@@ -46,6 +49,7 @@ localStorage.setItem('theme', newTheme);
 ```
 
 #### Line Heights
+
 ```
 --lh-tight:   1.2   (Compact - headings)
 --lh-normal:  1.5   (Standard - body text)
@@ -55,6 +59,7 @@ localStorage.setItem('theme', newTheme);
 ### 3. **Product & Price Visibility**
 
 All product information is now fully visible in the table:
+
 - ✅ **Nama Furnitur** (Product Name)
 - ✅ **Deskripsi** (Description)
 - ✅ **Kategori** (Category Badge with theme support)
@@ -63,6 +68,7 @@ All product information is now fully visible in the table:
 - ✅ **Status** (Tersedia/Available)
 
 Example table display:
+
 ```
 ┌─────────────────────┬──────────────┬──────────┬──────────────┬────────┐
 │ Nama Furnitur       │ Kategori     │ Harga    │ Stok         │ Status │
@@ -78,29 +84,29 @@ Example table display:
 
 ### Light Theme (Default)
 
-| Element | Color | Usage |
-|---------|-------|-------|
-| Text (Primary) | #333333 | Main body text |
-| Text (Secondary) | #666666 | Descriptions, meta info |
-| Background | #f5f6fa | Page background |
-| Card Background | #ffffff | Component backgrounds |
-| Border | #ddd | Dividers, input borders |
-| Primary | #3498db | Main buttons, links |
-| Secondary | #2ecc71 | Success, confirm actions |
-| Danger | #e74c3c | Cancel, delete actions |
+| Element          | Color   | Usage                    |
+| ---------------- | ------- | ------------------------ |
+| Text (Primary)   | #333333 | Main body text           |
+| Text (Secondary) | #666666 | Descriptions, meta info  |
+| Background       | #f5f6fa | Page background          |
+| Card Background  | #ffffff | Component backgrounds    |
+| Border           | #ddd    | Dividers, input borders  |
+| Primary          | #3498db | Main buttons, links      |
+| Secondary        | #2ecc71 | Success, confirm actions |
+| Danger           | #e74c3c | Cancel, delete actions   |
 
 ### Dark Theme
 
-| Element | Color | Usage |
-|---------|-------|-------|
-| Text (Primary) | #e0e0e0 | Main body text |
-| Text (Secondary) | #b0b0b0 | Descriptions, meta info |
-| Background | #1a1a1a | Page background |
-| Card Background | #2d2d2d | Component backgrounds |
-| Border | #444444 | Dividers, input borders |
-| Primary | #3498db | Main buttons, links (same) |
-| Secondary | #2ecc71 | Success, confirm actions (same) |
-| Danger | #e74c3c | Cancel, delete actions (same) |
+| Element          | Color   | Usage                           |
+| ---------------- | ------- | ------------------------------- |
+| Text (Primary)   | #e0e0e0 | Main body text                  |
+| Text (Secondary) | #b0b0b0 | Descriptions, meta info         |
+| Background       | #1a1a1a | Page background                 |
+| Card Background  | #2d2d2d | Component backgrounds           |
+| Border           | #444444 | Dividers, input borders         |
+| Primary          | #3498db | Main buttons, links (same)      |
+| Secondary        | #2ecc71 | Success, confirm actions (same) |
+| Danger           | #e74c3c | Cancel, delete actions (same)   |
 
 ---
 
@@ -119,7 +125,9 @@ Example table display:
 /* Mobile - 480px and below */
 @media (max-width: 480px) {
   /* Reduced base font size */
-  html { font-size: 14px; }
+  html {
+    font-size: 14px;
+  }
   /* Stack layouts vertically */
   /* Reduced padding and margins */
 }
@@ -142,13 +150,13 @@ All CSS variables are automatically available throughout the stylesheet:
 
 ```css
 /* Light theme (default) */
-color: var(--text-color);              /* #333333 */
-background-color: var(--card-bg);      /* #ffffff */
+color: var(--text-color); /* #333333 */
+background-color: var(--card-bg); /* #ffffff */
 
 /* Dark theme (data-theme="dark") */
-[data-theme="dark"] {
-  color: var(--text-color);            /* #e0e0e0 */
-  background-color: var(--card-bg);    /* #2d2d2d */
+[data-theme='dark'] {
+  color: var(--text-color); /* #e0e0e0 */
+  background-color: var(--card-bg); /* #2d2d2d */
 }
 ```
 
@@ -167,9 +175,9 @@ When adding new UI components, follow this pattern:
 ```css
 /* CSS with theme support */
 .my-component {
-  color: var(--text-color);           /* Inherits theme color */
-  background: var(--card-bg);         /* Inherits theme background */
-  border: 1px solid var(--border-color);  /* Theme-aware border */
+  color: var(--text-color); /* Inherits theme color */
+  background: var(--card-bg); /* Inherits theme background */
+  border: 1px solid var(--border-color); /* Theme-aware border */
 }
 ```
 
@@ -178,6 +186,7 @@ When adding new UI components, follow this pattern:
 ## 📊 Typography Hierarchy
 
 ### Heading Hierarchy
+
 - **H1** (`var(--fs-4xl)`, 32px) - Hero/Page titles
 - **H2** (`var(--fs-3xl)`, 28px) - Section headers
 - **H3** (`var(--fs-2xl)`, 24px) - Subsection headers
@@ -187,6 +196,7 @@ When adding new UI components, follow this pattern:
 - **Extra Small** (`var(--fs-xs)`, 12px) - Captions
 
 ### Text Contrast
+
 - All text meets WCAG AA contrast requirements (4.5:1 minimum)
 - Dark theme inverts colors to maintain contrast
 - Status badges have inverse backgrounds in dark theme
@@ -196,6 +206,7 @@ When adding new UI components, follow this pattern:
 ## 🎨 Component Styling Guide
 
 ### Buttons
+
 ```
 Primary Button:
 - Light: White text on blue (#3498db)
@@ -207,6 +218,7 @@ Danger Button:
 ```
 
 ### Tables
+
 ```
 Light Theme:
 - Header: Light gray (#ecf0f1) background
@@ -220,6 +232,7 @@ Dark Theme:
 ```
 
 ### Badges
+
 ```
 Status Badge (Light):
 - Pending: Yellow background (#fff3cd), brown text (#856404)
@@ -235,12 +248,14 @@ Status Badge (Dark):
 ## 🚀 Browser Support
 
 ✅ **Fully Supported**:
+
 - Chrome 49+
 - Firefox 40+
 - Safari 9.1+
 - Edge 15+
 
 **Features**:
+
 - CSS Custom Properties (Variables)
 - CSS Grid
 - Flexbox
@@ -252,12 +267,11 @@ Status Badge (Dark):
 ## 📝 Font Stack
 
 ```css
-font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
-  'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
-  'Helvetica Neue', sans-serif;
+font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
 ```
 
 This stack provides:
+
 - System fonts for native appearance on each OS
 - Best performance (no font downloads)
 - Excellent readability and accessibility
@@ -268,16 +282,19 @@ This stack provides:
 ## 🔄 Automatic Theme Application
 
 ### Products Table
+
 - All product names, descriptions, categories, and prices visible
 - Category badges automatically theme-aware
 - Price formatting with Rp currency (Indonesian Rupiah)
 
 ### Admin Dashboard
+
 - All form fields inherit theme colors
 - Input fields have theme-specific backgrounds
 - Buttons maintain contrast across themes
 
 ### Chatbot
+
 - Chat messages theme-aware
 - Input field matches theme
 - User messages: Blue background (consistent across themes)
