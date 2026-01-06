@@ -1,18 +1,25 @@
 {
   "name": "pre-test",
   "version": "1.0.0",
-  "description": "Admin Panel & Chatbot dengan AI Integration",
+  "description": "Xionco Furniture - Admin Panel & Chatbot dengan AI Integration & Enterprise Security",
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
-    "dev": "node app.js"
+    "dev": "NODE_ENV=development node app.js",
+    "prod": "NODE_ENV=production node app.js",
+    "security:keys": "node scripts/generate-security-keys.js",
+    "security:check": "node scripts/security-audit.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
     "admin",
     "chatbot",
-    "ai"
+    "ai",
+    "security",
+    "encryption",
+    "rsa"
   ],
-  "author": "",
+  "author": "Xionco Team",
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
@@ -21,5 +28,18 @@
     "ejs": "^3.1.10",
     "express": "^5.2.1",
     "sqlite3": "^5.1.7"
+  },
+  "devDependencies": {
+    "terser": "^5.27.0",
+    "uglify-js": "^3.18.1"
+  },
+  "optionalDependencies": {
+    "helmet": "^7.1.0",
+    "express-rate-limit": "^7.1.5",
+    "express-validator": "^7.1.0"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
   }
 }
