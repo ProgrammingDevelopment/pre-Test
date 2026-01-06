@@ -1,43 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Store Admin & Chatbot</title>
+    <title>Xionco Furniture - Home</title>
     <link rel="stylesheet" href="/css/style.css" />
   </head>
   <body>
     <nav class="navbar">
       <div class="container">
         <div class="nav-brand">
-        <h1>🛋️ Xionco Furniture</h1>
+          <h1>🛋️ Xionco Furniture</h1>
+        </div>
+        <ul class="nav-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/admin">Admin Panel</a></li>
+          <li><a href="/#chatbot">Chat Support</a></li>
+          <li><button id="themeToggle" class="theme-toggle" title="Toggle Dark/Light Mode">🌙</button></li>
+        </ul>
       </div>
-      <ul class="nav-links">
-        <li><a href="/">Home</a></li>
-        <li><a href="/admin">Admin Panel</a></li>
-        <li><a href="/#chatbot">Chat Support</a></li>
+    </nav>
 
     <div class="container">
       <div class="hero">
-      <h2>Welcome to Xionco Furniture</h2>
-      <p>Furniture berkualitas tinggi untuk rumah impian Anda</p>
-      <div class="cta-buttons">
-        <a href="/admin" class="btn btn-primary">Manage Orders</a>
-        <a href="/#chatbot" class="btn btn-secondary">Ask AI Assistant</a>
+        <h2>Welcome to Xionco Furniture</h2>
+        <p>Furniture berkualitas tinggi untuk rumah impian Anda</p>
+        <div class="cta-buttons">
+          <a href="/admin" class="btn btn-primary">Manage Orders</a>
+          <a href="/#chatbot" class="btn btn-secondary">Ask AI Assistant</a>
+        </div>
       </div>
 
       <!-- Chatbot Section -->
       <div id="chatbot" class="chatbot-section">
         <div class="chatbot-container">
           <div class="chatbot-header">
-          <h3>🤖 AI Furniture Assistant</h3>
-          <p>Tanya tentang koleksi furnitur kami dan dapatkan rekomendasi terbaik</p>
+            <h3>🤖 AI Furniture Assistant</h3>
+            <p>Tanya tentang koleksi furnitur kami dan dapatkan rekomendasi terbaik</p>
+          </div>
 
           <div class="chat-box">
             <div id="chatMessages" class="chat-messages"></div>
             <div class="chat-input-group">
               <input type="text" id="chatInput" placeholder="Tanya tentang furnitur favorit Anda..." onkeypress="handleChatKeypress(event)" />
-              <button onclick="sendChatMessage()" class="btn btn-small">Send</button>
+              <button onclick="sendChatMessage()" class="btn btn-primary btn-small">Send</button>
             </div>
           </div>
         </div>
@@ -45,5 +51,24 @@
     </div>
 
     <script src="/js/chatbot.js"></script>
+    <script>
+      // Theme Toggle
+      const themeToggle = document.getElementById('themeToggle');
+      const htmlElement = document.documentElement;
+      
+      // Check for saved theme preference or default to light
+      const currentTheme = localStorage.getItem('theme') || 'light';
+      htmlElement.setAttribute('data-theme', currentTheme);
+      themeToggle.textContent = currentTheme === 'dark' ? '☀️' : '🌙';
+      
+      // Toggle theme
+      themeToggle.addEventListener('click', () => {
+        const theme = htmlElement.getAttribute('data-theme');
+        const newTheme = theme === 'dark' ? 'light' : 'dark';
+        htmlElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        themeToggle.textContent = newTheme === 'dark' ? '☀️' : '🌙';
+      });
+    </script>
   </body>
 </html>
