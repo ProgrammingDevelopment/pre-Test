@@ -24,20 +24,20 @@ app.use('/api/chat', chatbotRoutes);
 
 // Home page
 app.get('/', (req, res) => {
-  res.render('index');
+    res.render('index');
 });
 
 // 404 handler
 app.use((req, res) => {
-  res.status(404).render('404');
+    res.status(404).render('404');
 });
 
 // Error handler
 app.use((err, req, res, next) => {
-  console.error(err.stack);
-  res.status(500).json({ error: 'Something went wrong!' });
+    console.error(err.stack);
+    res.status(500).json({ error: 'Something went wrong!' });
 });
 
 app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
+    console.log(`Server running on http://localhost:${PORT}`);
 });

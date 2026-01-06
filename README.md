@@ -1,10 +1,11 @@
-# Store Management System & AI Chatbot
+# Xionco Furniture - Admin Panel & AI Chatbot
 
-Sistem admin panel untuk manajemen pembelian produk dan chatbot terintegrasi dengan AI.
+Sistem admin panel untuk manajemen pesanan furnitur dan chatbot terintegrasi dengan AI.
 
 ## 🎯 Fitur
 
 ### Admin Panel
+
 - **Dashboard**: Lihat ringkasan pembelian dan stok produk
 - **Manajemen Pembelian**: Buat, konfirmasi, dan batalkan pembelian
 - **Database Produk**: 10 produk dengan informasi harga dan stock
@@ -12,6 +13,7 @@ Sistem admin panel untuk manajemen pembelian produk dan chatbot terintegrasi den
 - **Riwayat Transaksi**: Lihat semua pembelian dengan status
 
 ### AI Chatbot
+
 - **Asisten Belanja**: Tanya jawab tentang produk dan rekomendasi
 - **Multi-AI Support**: Deepseek, Gemini, OpenAI ChatGPT, Ollama
 - **Interface User-Friendly**: Chat interaktif yang responsif
@@ -22,7 +24,7 @@ Sistem admin panel untuk manajemen pembelian produk dan chatbot terintegrasi den
 - **Backend**: Node.js + Express.js
 - **Frontend**: EJS (Template Engine), HTML5, CSS3, Vanilla JavaScript
 - **Database**: SQLite3
-- **AI Integration**: 
+- **AI Integration**:
   - Deepseek API
   - Google Gemini API
   - OpenAI ChatGPT API
@@ -38,17 +40,20 @@ Sistem admin panel untuk manajemen pembelian produk dan chatbot terintegrasi den
 ## 🚀 Instalasi & Setup
 
 ### 1. Clone Repository
+
 ```bash
 git clone https://github.com/yourusername/pre-test.git
 cd pre-test
 ```
 
 ### 2. Install Dependencies
+
 ```bash
 npm install
 ```
 
 ### 3. Setup Environment Variables
+
 Buat file `.env` di root directory:
 
 ```env
@@ -69,6 +74,7 @@ OLLAMA_URL=http://localhost:11434
 ```
 
 ### 4. Jalankan Server
+
 ```bash
 npm start
 ```
@@ -78,12 +84,14 @@ Server akan berjalan di `http://localhost:3000`
 ## 📱 Cara Penggunaan
 
 ### Admin Panel
+
 1. Buka browser dan navigasi ke `http://localhost:3000/admin`
 2. Gunakan form untuk membuat pembelian baru
 3. Pilih produk dan masukkan jumlah
 4. Lihat riwayat pembelian dan manage status (pending, confirmed, cancelled)
 
 ### Chatbot
+
 1. Buka `http://localhost:3000`
 2. Scroll ke bagian Chatbot
 3. Ketik pesan dan tekan Enter atau klik tombol Send
@@ -92,6 +100,7 @@ Server akan berjalan di `http://localhost:3000`
 ## 📦 Database Schema
 
 ### Tabel Products
+
 ```sql
 CREATE TABLE products (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -103,6 +112,7 @@ CREATE TABLE products (
 ```
 
 ### Tabel Product Stock
+
 ```sql
 CREATE TABLE product_stock (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -114,6 +124,7 @@ CREATE TABLE product_stock (
 ```
 
 ### Tabel Purchases
+
 ```sql
 CREATE TABLE purchases (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -129,24 +140,28 @@ CREATE TABLE purchases (
 ## 🔌 Konfigurasi AI Service
 
 ### Menggunakan Deepseek
+
 1. Daftar di https://platform.deepseek.com
 2. Dapatkan API Key
 3. Set `AI_API=deepseek` di .env
 4. Masukkan API Key ke `DEEPSEEK_API_KEY`
 
 ### Menggunakan Google Gemini
+
 1. Daftar di https://makersuite.google.com/app/apikey
 2. Dapatkan API Key
 3. Set `AI_API=gemini` di .env
 4. Masukkan API Key ke `GEMINI_API_KEY`
 
 ### Menggunakan OpenAI ChatGPT
+
 1. Daftar di https://platform.openai.com
 2. Dapatkan API Key
 3. Set `AI_API=openai` di .env
 4. Masukkan API Key ke `OPENAI_API_KEY`
 
 ### Menggunakan Ollama (Local - Free)
+
 1. Install Ollama dari https://ollama.ai
 2. Jalankan: `ollama run llama2`
 3. Set `AI_API=ollama` di .env
@@ -198,6 +213,7 @@ pre-test/
 ## 📝 API Endpoints
 
 ### Admin Routes
+
 - `GET /admin` - Dashboard admin
 - `GET /admin/products` - Daftar produk dengan stock
 - `POST /admin/purchases/add` - Buat pembelian baru
@@ -206,22 +222,26 @@ pre-test/
 - `POST /admin/purchases/:id/confirm` - Konfirmasi pembelian
 
 ### Chatbot Routes
+
 - `POST /api/chat` - Kirim pesan ke chatbot
 
 ## 🐛 Troubleshooting
 
 ### Chatbot tidak merespons
+
 - Pastikan API Key sudah dimasukkan ke .env
 - Cek koneksi internet
 - Pastikan AI service yang dipilih available
 - Lihat console untuk error messages
 
 ### Database error
+
 - Pastikan folder `data/` ada
 - Cek permissions untuk read/write file
 - Hapus `data/store.db` dan restart server untuk reset database
 
 ### Port sudah digunakan
+
 - Ubah PORT di .env ke port yang berbeda
 - Atau kill process yang menggunakan port 3000
 

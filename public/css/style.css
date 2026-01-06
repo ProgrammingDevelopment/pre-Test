@@ -33,7 +33,7 @@ body {
   background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
   color: white;
   padding: 1rem 0;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   position: sticky;
   top: 0;
   z-index: 100;
@@ -160,7 +160,7 @@ body {
 .chatbot-container {
   background: white;
   border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   overflow: hidden;
 }
 
@@ -245,7 +245,7 @@ body {
   background: white;
   border-radius: 8px;
   margin: 2rem 0;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .admin-header {
@@ -266,7 +266,7 @@ body {
 }
 
 .stat-card {
-  background: rgba(255,255,255,0.2);
+  background: rgba(255, 255, 255, 0.2);
   padding: 1.5rem;
   border-radius: 6px;
   text-align: center;
@@ -407,6 +407,17 @@ body {
   padding: 0.4rem 0.8rem;
   background-color: var(--light-color);
   border-radius: 4px;
+}
+
+/* Category Badge */
+.category-badge {
+  display: inline-block;
+  padding: 0.3rem 0.6rem;
+  background-color: #e3f2fd;
+  color: #1976d2;
+  border-radius: 3px;
+  font-size: 0.85rem;
+  font-weight: 500;
 }
 
 /* Action Buttons */

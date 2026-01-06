@@ -37,6 +37,7 @@ Repository akan tersedia di: `https://github.com/YOURUSERNAME/pre-test`
 ## 4. Setup untuk Pengguna Lain
 
 Orang lain bisa clone dengan:
+
 ```bash
 git clone https://github.com/YOURUSERNAME/pre-test.git
 cd pre-test
@@ -101,14 +102,17 @@ Setiap produk dengan stock awal 50 unit.
 ## API yang Didukung untuk Chatbot:
 
 1. **Deepseek** (Recommended)
+
    - Website: https://platform.deepseek.com
    - API Key: sk-...
 
 2. **Google Gemini**
+
    - Website: https://makersuite.google.com/app/apikey
    - Free tier tersedia
 
 3. **OpenAI ChatGPT**
+
    - Website: https://platform.openai.com
    - Bayar per token
 
