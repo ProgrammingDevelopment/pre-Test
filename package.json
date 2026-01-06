@@ -1,0 +1,25 @@
+{
+  "name": "pre-test",
+  "version": "1.0.0",
+  "description": "Admin Panel & Chatbot dengan AI Integration",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "node app.js"
+  },
+  "keywords": [
+    "admin",
+    "chatbot",
+    "ai"
+  ],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "axios": "^1.13.2",
+    "dotenv": "^17.2.3",
+    "ejs": "^3.1.10",
+    "express": "^5.2.1",
+    "sqlite3": "^5.1.7"
+  }
+}
